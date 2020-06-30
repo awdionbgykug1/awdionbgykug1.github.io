@@ -1,0 +1,35 @@
+body {
+    background: magenta;
+}
+
+.wrapper {
+    width: 70%;
+    margin: auto;
+}
+
+.tel {
+    color: white;
+    font-family: "Graphik LCG";
+    position: relative;
+    display: inline-block;
+    padding-left: 61%;
+}
+
+.pre-tel {
+    font-size: small;
+    display: inline-block
+}
+
+.logo-gif {
+    width: 16%;
+    height: 3%;
+    right: 19.5%;
+    top: 2.4%;
+    display: inline-block;
+}
+
+.b-menu {
+    width: 60px;
+    height: 35px;
+    display: inline-block;
+}
