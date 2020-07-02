@@ -81,3 +81,21 @@ body {
     transform: rotate(45deg) translate(-9px, -2px) scale(1, 2);
     background-color: red;
 }
+
+.menu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    background-color: blueviolet;
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+    border-radius: 20%;
+}
+
+.change .menu {
+    display: block;
+}
