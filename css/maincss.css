@@ -114,6 +114,18 @@ body {
     background-color: red;
 }
 
+.first-adr {
+    margin-left: 28%;
+}
+
+.sec-adr {
+    margin-left: 47%;
+}
+
+.th-adr {
+    margin-left: 67%;
+}
+
 
 /* .menu {
     display: none;
