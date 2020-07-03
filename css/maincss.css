@@ -116,14 +116,17 @@ body {
 
 .first-adr {
     margin-left: 28%;
+    text-decoration: none;
 }
 
 .sec-adr {
     margin-left: 47%;
+    text-decoration: none;
 }
 
 .th-adr {
     margin-left: 67%;
+    text-decoration: none;
 }
 
 
