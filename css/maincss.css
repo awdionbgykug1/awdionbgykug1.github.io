@@ -30,10 +30,6 @@ body {
     display: inline-block;
 }
 
-hr {
-    margin: 20px 0;
-}
-
 .lr1 {
     width: 80%;
     margin-right: 0;
@@ -50,11 +46,13 @@ hr {
 }
 
 .ll1 {
+    margin-bottom: 40px;
     width: 40%;
     margin-left: 0;
 }
 
 .ll2 {
+    margin-bottom: 40px;
     width: 60%;
     margin-left: 0;
 }
