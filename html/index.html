@@ -24,33 +24,48 @@
                 095 81 00 676
             </div>
 
-            <div class="container" onclick="myFunction(this)">
-                <div class="menu">
-                    <a href="https://vk.com">lorem</a>
-                    <a href="https://ya.ru/">lorem</a>
-                    <a href="">lorem</a>
-                    <a href="">lorem</a>
+
+
+
+
+
+            <div class="dropdown">
+
+                <div id="myDropdown" class="dropdown-content">
+
                 </div>
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
             </div>
 
-            <!-- <img src="https://shared-assets.adobe.com/link/56a97f67-db4b-408e-78ee-8634e43fcf70" alt=""> -->
 
 
+            <div class="nav">
+
+                <div class="container" id="container">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+                <ul id="menu" class="menu">
+                    <li><a href="https://vk.com">lorem</a></li>
+                    <li><a href="https://ya.ru/">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+            </div>
 
 
 
 
         </div>
     </div>
-
+    <i></i>
+    <i></i>
+    <i></i>
 
 
     <script>
-        function myFunction(x) {
-            x.classList.toggle("change");
+        document.getElementById("container").onclick = function() {
+            document.getElementById("menu").classList.toggle("show")
         }
     </script>
 </body>

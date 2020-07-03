@@ -82,7 +82,8 @@ body {
     background-color: red;
 }
 
-.menu {
+
+/* .menu {
     display: none;
     overflow: hidden;
     position: fixed;
@@ -96,4 +97,35 @@ body {
 
 .change .menu {
     display: block;
+} */
+
+ul {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+ul a {
+    margin-left: 10px;
+}
+
+@media (max-width:640px) {
+    .menu {
+        display: none;
+    }
+    .trigger {
+        display: inline-block;
+        margin: 3px;
+        cursor: pointer;
+    }
+    .trigger i {
+        display: block;
+        width: 30px;
+        height: 6px;
+        margin: 4px auto;
+        background: #222;
+    }
+    .show {
+        display: block;
+    }
 }
