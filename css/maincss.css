@@ -1,5 +1,6 @@
 body {
     background: magenta;
+    overflow: hidden;
 }
 
 .wrapper {
@@ -196,7 +197,7 @@ ul a {
 }
 
 .menu li:not(:last-child) {
-    margin-right: 10px;
+    margin-left: 24%;
 }
 
 @keyframes line {
@@ -210,4 +211,16 @@ ul a {
 .menu li {
     width: 120px;
     height: 50px;
+}
+
+.m1 {
+    margin-left: 24%;
+}
+
+.m2 {
+    margin-left: 42%;
+}
+
+.m3 {
+    margin-left: 60%;
 }
