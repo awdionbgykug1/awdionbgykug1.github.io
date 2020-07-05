@@ -166,19 +166,38 @@ ul a {
     margin-left: 10px;
 }
 
+.clearfix {
+    height: 30px;
+}
+
+.menu-bg:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 3;
+}
+
 .menu {
     display: none;
     font-size: 260%;
+    right: 0%;
+    position: absolute;
+    height: max-content;
+    z-index: 100;
+}
+
+.menu-bg {
     background-image: url(https://i.artfile.me/wallpaper/07-09-2017/2048x1365/yasaka-pagoda--higashiyama-district--kyo-1225055.jpg);
     background-position: center;
     width: 100vw;
     right: 0%;
     position: absolute;
     height: max-content;
-}
-
-#menu {
-    background-color: #2222229e;
+    z-index: 2;
 }
 
 .trigger {
