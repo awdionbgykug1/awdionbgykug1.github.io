@@ -134,6 +134,7 @@ body {
 p {
     font-family: 'Comfortaa', cursive;
     font-weight: 500;
+    color: chocolate;
 }
 
 a {
@@ -170,6 +171,7 @@ ul a {
 
 .menu {
     display: none;
+    font-size: 249%;
 }
 
 .trigger {
