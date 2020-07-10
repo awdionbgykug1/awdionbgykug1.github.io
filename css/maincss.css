@@ -228,20 +228,44 @@ ul a {
 
 .padoru-snd {}
 
+.padoru-icon {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 12px;
+    right: 22px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.padoru-icon:hover {
+    opacity: 1;
+    content: ' ';
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    cursor: pointer;
+    border: 4px solid gold;
+    border-radius: 50%;
+    padding: 12px;
+}
+
 .padoru-icon-vol {
     width: 70px;
     height: 70px;
     position: absolute;
-    top: 5px;
-    right: 9px;
+    top: 12px;
+    right: 7px;
+    z-index: 2;
 }
 
 .padoru-icon-mute {
     width: 70px;
     height: 70px;
     position: absolute;
-    top: 6px;
-    right: 22px;
+    top: 13px;
+    right: 13px;
+    z-index: 2;
 }
 
 

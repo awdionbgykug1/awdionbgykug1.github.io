@@ -85,9 +85,10 @@
 
             <audio class="padoru-snd" src="https://data.ipleer.com/listen/176213025/MkhxVkozY3lXREZKenVlWjVlT0duR0ZOMzRYL3BKUXExUlk0aWF3TC9rOEVVTDlXVEwrWlM0Y3hUOW9CYXFLTkpHQ2N4YmdlSmFCaHpLNmdTNVdCcnJJdlZyRVplYzFscFYyU1hoaC9nOUJlc1FPQ3hyOXE4bHlOU3cxcklKWjM/padoru_padoru_-_hashire_sori_yo_kaze_no_you_ni_tsukimihara_wo_(iPleer.com).mp3"
                 autoplay="autoplay"></audio>
-            <img src="https://image.flaticon.com/icons/svg/727/727269.svg" alt="volume" class="padoru-icon-vol">
-            <img src="https://image.flaticon.com/icons/svg/727/727240.svg" alt="mute" class="padoru-icon-mute">
-
+            <div class="padoru-icon" onclick="pausePlay()">
+                <img src="https://image.flaticon.com/icons/svg/727/727269.svg" alt="volume" class="padoru-icon-vol">
+                <img src="https://image.flaticon.com/icons/svg/727/727240.svg" alt="mute" class="padoru-icon-mute">
+            </div>
         </div>
 
 
@@ -97,7 +98,18 @@
                 document.querySelector(".menu ").classList.toggle("show")
             }
         </script>
+        <script>
+            function pausePlay() {
+                var v = document.querySelector(".padoru-icon");
+                v.addEventListener("seeked", function() {
+                    document.getElementsByTagName("video")[0].play();
+                }, true);
 
+                var audio = new Audio(); // Создаём новый элемент Audio
+                audio.src = 'click.mp3'; // Указываем путь к звуку "клика"
+                audio.autoplay = true; // Автоматически запускаем
+            }
+        </script>
 
 </body>
 
