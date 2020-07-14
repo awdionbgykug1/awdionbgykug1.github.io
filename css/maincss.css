@@ -235,7 +235,7 @@ ul a {
     top: 12px;
     right: 22px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 20000;
 }
 
 .padoru-icon:hover {
@@ -257,6 +257,7 @@ ul a {
     top: 12px;
     right: 7px;
     z-index: 2;
+    display: none;
 }
 
 .padoru-icon-mute {
@@ -266,6 +267,11 @@ ul a {
     top: 13px;
     right: 13px;
     z-index: 2;
+    display: inherit;
+}
+
+.s {
+    display: block;
 }
 
 

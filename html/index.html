@@ -84,8 +84,8 @@
             <img class="padoru-img" src="https://media1.tenor.com/images/0a7b2e32eb7235690a96c44235128eec/tenor.gif" alt="padoru">
 
             <audio class="padoru-snd" src="https://data.ipleer.com/listen/176213025/MkhxVkozY3lXREZKenVlWjVlT0duR0ZOMzRYL3BKUXExUlk0aWF3TC9rOEVVTDlXVEwrWlM0Y3hUOW9CYXFLTkpHQ2N4YmdlSmFCaHpLNmdTNVdCcnJJdlZyRVplYzFscFYyU1hoaC9nOUJlc1FPQ3hyOXE4bHlOU3cxcklKWjM/padoru_padoru_-_hashire_sori_yo_kaze_no_you_ni_tsukimihara_wo_(iPleer.com).mp3"
-                autoplay="autoplay"></audio>
-            <div class="padoru-icon" onclick="pausePlay()">
+                loop="loop" autoplay="autoplay"></audio>
+            <div class="padoru-icon" onclick="padoruFunc()">
                 <img src="https://image.flaticon.com/icons/svg/727/727269.svg" alt="volume" class="padoru-icon-vol">
                 <img src="https://image.flaticon.com/icons/svg/727/727240.svg" alt="mute" class="padoru-icon-mute">
             </div>
@@ -99,16 +99,38 @@
             }
         </script>
         <script>
-            function pausePlay() {
-                var v = document.querySelector(".padoru-icon");
-                v.addEventListener("seeked", function() {
-                    document.getElementsByTagName("video")[0].play();
-                }, true);
+            let v = document.querySelector(".padoru-snd");
+            // v.autoplay = true;
+            // v.loop = true;
+            // v.src = "https://data.ipleer.com/listen/176213025/MkhxVkozY3lXREZKenVlWjVlT0duR0ZOMzRYL3BKUXExUlk0aWF3TC9rOEVVTDlXVEwrWlM0Y3hUOW9CYXFLTkpHQ2N4YmdlSmFCaHpLNmdTNVdCcnJJdlZyRVplYzFscFYyU1hoaC9nOUJlc1FPQ3hyOXE4bHlOU3cxcklKWjM/padoru_padoru_-_hashire_sori_yo_kaze_no_you_ni_tsukimihara_wo_(iPleer.com).mp3";
+            padoruFunc = function() {
+                    return v;
+                    document.querySelector(".padoru-icon").onclick = function() {
 
-                var audio = new Audio(); // Создаём новый элемент Audio
-                audio.src = 'click.mp3'; // Указываем путь к звуку "клика"
-                audio.autoplay = true; // Автоматически запускаем
-            }
+                        if (v.paused = true) {
+                            v.play();
+
+                        }
+
+                        if (v.playing = true) {
+
+                            v.pause();
+
+                        }
+                    }
+                    document.querySelector("padoru-icon").classList.toggle("s");
+
+
+
+
+                }
+                // document.querySelector("padoru-icon-vol").click(function() {
+                //     audio.play();
+                // });
+
+            // $("#pauseBtn").click(function() {
+            //     audio.pause();
+            // });
         </script>
 
 </body>
