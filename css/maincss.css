@@ -9,8 +9,8 @@ ul.xxz {
 
 ul li.zzc {
     list-style-type: none;
-    width: 200px;
-    height: 200px;
+    width: 359px;
+    height: 250px;
     position: absolute;
     top: 0;
     border-radius: 50%;
@@ -346,7 +346,12 @@ ul a {
     display: block;
 }
 
-.cont-video {}
+.cont-video {
+    width: 81vw;
+    position: absolute;
+    margin: 30px;
+    left: 7%;
+}
 
 .main-vid-1 {}
 
@@ -367,10 +372,9 @@ ul a {
 }
 
 .frame-1 {
-    background-image: url(https://i.ytimg.com/vi/bB34_eLCLKo/maxresdefault.jpg);
-    position: absolute;
+    /* background-image: url(https://i.ytimg.com/vi/bB34_eLCLKo/maxresdefault.jpg);
     width: 53%;
-    left: 9.5%;
+    left: 9.5%; */
 }
 
 .frame-2 {}
