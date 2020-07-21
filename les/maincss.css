@@ -4,6 +4,28 @@
     height: 1000px;
 }
 
+.first-section::before {
+    content: '';
+    position: absolute;
+    background-color: #05030094;
+    left: 0;
+    top: 0;
+    width: 29%;
+    height: inherit;
+    z-index: 2;
+}
+
+.first-section::after {
+    content: '';
+    background-image: url(/les/pictures/mouse.png);
+    bottom: -55%;
+    right: 14%;
+    width: 22px;
+    height: 178px;
+    position: absolute;
+    display: block;
+}
+
 .first-section-cont {
     margin-left: 18%;
     margin-right: 18%;
@@ -19,6 +41,7 @@
 
 .icon-logo {
     display: inline-block;
+    margin-right: 5px;
 }
 
 .icon-logo::after {
@@ -46,6 +69,7 @@
     display: inline-block;
     top: 23px;
     position: absolute;
+    margin-left: 4px;
 }
 
 .asd {
@@ -63,12 +87,11 @@
 
 .grid-cont {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 20%));
+    grid-template-columns: repeat(auto-fit, minmax(113.4px, 20%));
 }
 
 .grid-cont li {
-    background-color: rgba(0, 0, 0, 0.3);
-    /* line-height: 40px; */
+    line-height: 40px;
     text-align: center;
     white-space: nowrap;
 }
@@ -88,6 +111,18 @@ nav {
     display: inline-block;
 }
 
-.blure-layer {
-    background-color: #050300;
+a {
+    text-decoration: none;
+    color: rgb(206, 206, 191);
+}
+
+
+/* slider */
+
+.slider {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    top: 25%;
+    left: 29%;
 }
