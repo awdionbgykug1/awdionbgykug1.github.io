@@ -1,11 +1,12 @@
 .first-section {
-    width: 100vw;
-    height: 100%;
-    padding-top: -25px;
-    padding-left: -18%;
-    padding-right: -18%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     background-image: url(/les/pictures/bg-rust.png);
+    height: 1000px;
+}
+
+.first-section-cont {
+    margin-left: 18%;
+    margin-right: 18%;
 }
 
 .logo {
@@ -13,10 +14,20 @@
     width: 7, 5%;
     height: 3%;
     margin-right: 10%;
+    margin-top: 25px;
 }
 
 .icon-logo {
-    background-color: #F5F5F5;
+    display: inline-block;
+}
+
+.icon-logo::after {
+    content: '';
+    display: block;
+    background-color: white;
+    height: 3px;
+    width: 50px;
+    bottom: 0;
 }
 
 .logo-slogan {
@@ -25,11 +36,21 @@
     font-size: 14px;
     text-align: left;
     text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .qwert {
-    font-size: xx-small;
+    font-size: x-small;
     vertical-align: top;
+    display: inline-block;
+    top: 23px;
+    position: absolute;
+}
+
+.asd {
+    display: inline-block;
+    padding-top: 5px;
 }
 
 .header-menu-nav {
@@ -37,6 +58,34 @@
     font-family: Montserrat-Medium, AdobeInvisFont, MyriadPro-Regular;
     font-size: 16px;
     padding-top: -50px;
+    text-decoration: none;
+}
+
+.grid-cont {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 20%));
+}
+
+.grid-cont li {
+    background-color: rgba(0, 0, 0, 0.3);
+    /* line-height: 40px; */
+    text-align: center;
+    white-space: nowrap;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul li {
+    width: auto;
+    display: inline-block;
+}
+
+nav {
+    display: inline-block;
 }
 
 .blure-layer {
