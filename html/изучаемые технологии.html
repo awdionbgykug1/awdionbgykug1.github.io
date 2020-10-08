@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" contenteditable>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../html/reset.css">
+    <link rel="stylesheet" href="../html/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <h1 class="text-center">Собрание каких-то технологий</h1>
+        CONTENT EDITABLE
+        <h2 class="text-center css">Технологии CSS</h2>
+        <div class="css-cont">
+
+        </div>
+        <h2 class="html">Технологии HTML</h2>
+        <div class="html-cont">
+            <table class="table">
+                <caption>Тег <span>xmp</span> </caption>
+                <thead class="col-12">
+                    <tr class=" ">
+                        <th class="namet col-6">Название</th>
+                        <th class="descriptiont col-6">Описание</th>
+                    </tr>
+                </thead>
+                <tbody class="row">
+                    <tr>
+                        <td class="tagname col"> <b>xmp</b> </td>
+                        <td class="tagdescription col">Внутри тега xmp все остальные теги HTML будут отображаться как обычный текст.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="alert-red">К сожалению, данный тег считается не стандартным и валидатор будет на него ругаться</p>
+
+            <div class="highlight-code">
+                <div class="background-cont">
+                    <div class="count-nmbr">
+                        <span class="counter-nbr"></span>
+                        <span class="counter-nbr"></span>
+                        <span class="counter-nbr"></span>
+                        <span class="counter-nbr"></span>
+                        <span class="counter-nbr"></span>
+                        <span class="counter-nbr"></span>
+                    </div>
+                    <div><code class="highlight"><div class="codereview"><code class="code-example"><p>Далее идет <span>&lt;xmp&gt; &lt;p&gt;</span>какой-то <span>&lt;/p&gt; &lt;/xmp&gt;</span> текст.</p></code><samp class="code-result">Далее идет<xmp class="xmp-exrcise"><p>какой-то</p></xmp> текст.</samp></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="alert-red">
+            7-го числа новый трек
+        </div>
+        <table>
+            <caption>Тег <span>code</span></caption>
+            <thead>
+                <tr>
+                    <th class="namet">Название</th>
+                    <th class="descriptiont">Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tagname"> <b>code</b> </td>
+                    <td class="tagdescription">В тег code принято заключать программный код любых языков, который вы хотите разместить в тексте своей HTML страницы.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Тег <span>samp</span> </caption>
+            <thead>
+                <tr>
+                    <th class="namet">Название</th>
+                    <th class="descriptiont">Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tagname"> <b>samp</b> </td>
+                    <td class="tagdescription">Тег samp используется для отображения текста, который является результатом вывода компьютерной программы или скрипта. </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2 class="javaScript">Технологии JS </h2>
+    <div class="javaScript-cont">
+        <table>
+            <caption>Функция <span>parseInt</span> </caption>
+            <thead>
+                <tr class=" ">
+                    <th class="namet">Название</th>
+                    <th class="descriptiont">Описание</th>
+                </tr>
+            </thead>
+            <tbody class="row">
+                <tr>
+                    <td class="tagname"> <b>parseInt</b> </td>
+                    <td class="tagdescription">Достает стоящее в начале число, отбросив строковую часть(применяется к целым числам)</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+    </div>
+
+
+    <script>
+        document.querySelector(".html").onclick = function() {
+            document.querySelector(".html-cont").classList.toggle("show");
+            document.querySelector(".html").classList.toggle("showUp")
+        }
+        document.querySelector(".javaScript").onclick = function() {
+            document.querySelector(".javaScript-cont").classList.toggle("show");
+            document.querySelector(".javaScript").classList.toggle("showUp")
+        }
+        document.querySelector(".css").onclick = function() {
+            document.querySelector(".css-cont").classList.toggle("show");
+            document.querySelector(".css").classList.toggle("showUp")
+        }
+    </script>
+
+</body>
+
+</html>
