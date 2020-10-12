@@ -14,23 +14,35 @@ html {
 .show {
     display: none !important;
 }
+
+.exercise {
+    color: darkgreen;
+    font-style: italic;
+}
+
+.exrcise:before {
+    content: " *// ";
+    font-size: 1.2em;
+}
+
 .css::after,
 .html::after,
 .javaScript::after {
-    content: "˄";
+    content: ">";
     font-size: 80px;
     border: rgb(180 185 0) 2px solid;
-     color: rgb(180 185 0);
+    color: rgb(180 185 0);
     border-radius: 10%;
     width: 55px;
     line-height: 50px;
     position: absolute;
     padding-bottom: 3px;
     margin-left: 10px;
+    transform: rotate(270deg);
 }
 
 .showUp::after {
-    content: "˅";
+    content: ">";
     font-size: 80px;
     border: rgb(0 107 14) 2px solid;
     color: rgb(0 107 14);
@@ -40,6 +52,7 @@ html {
     position: absolute;
     padding-bottom: 3px;
     margin-left: 10px;
+    transform: rotate(90deg);
 }
 
 .wrapper {
@@ -68,6 +81,7 @@ xmp {
 code.code-example {
     counter-reset: line-number;
     width: 100%;
+    white-space: pre;
 }
 
 .codereview {
@@ -204,10 +218,13 @@ table {
 
 .counter-nbr {
     display: block;
-    width: 17px;
+    width: 22px;
     float: left;
     border-right: 2px solid #ffffff;
-    margin-right: 15px;
+    margin-right: 8px;
+    margin-left: -7px;
+    padding-right: 6px;
+    text-align: center;
 }
 
 .counter-nbr::after {
