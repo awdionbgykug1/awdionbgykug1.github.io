@@ -1,12 +1,12 @@
 body {
     text-align: center;
-    background: #00ecb9;
+    background: #000000;
     font-family: sans-serif;
     font-weight: 100;
 }
 
 .countdown-title {
-    color: #396;
+    color: #cf00cf;
     font-weight: 100;
     font-size: 40px;
     margin: 40px 0px 20px;
@@ -24,8 +24,9 @@ body {
 .countdown-number {
     padding: 10px;
     border-radius: 3px;
-    background: #00bf96;
     display: inline-block;
+    border: 12px double #792d00;
+    border-radius: 20px;
 }
 
 .countdown-time {
@@ -39,4 +40,8 @@ body {
     display: block;
     padding-top: 5px;
     font-size: 16px;
+}
+
+div>span {
+    color: deeppink;
 }
