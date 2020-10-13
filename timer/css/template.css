@@ -1,6 +1,6 @@
 @font-face {
-    font-family: PFDaVinciScriptPro-Inked;
-    src: url(./timer/pfdavinciscriptpro-inked.ttf);
+    font-family: 'PFDaVinciScriptPro-Inked';
+    src: url(/timer/pfdavinciscriptpro-inked.ttf);
 }
 
 body {
