@@ -1,3 +1,8 @@
+@font-face {
+    font-family: PFDaVinciScriptPro-Inked;
+    src: url(/timer/pfdavinciscriptpro-inked.ttf);
+}
+
 body {
     text-align: center;
     background: #000000;
@@ -10,6 +15,7 @@ body {
     font-weight: 100;
     font-size: 40px;
     margin: 40px 0px 20px;
+    font-family: PFDaVinciScriptPro-Inked;
 }
 
 .countdown {
