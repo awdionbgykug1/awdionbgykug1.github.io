@@ -43,28 +43,33 @@ body {
     font-size: 16px;
 }
 
-
+.no-wrap {
+    white-space: nowrap;
 }
+
 .tooltip {
     position: relative;
     display: inline-block;
 }
+
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
-    background-color: gray;
-    color: #fff;
+    width: 300px;
+    background-color: black;
+    color: #0bbd06;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+    /* border-radius: 6px; */
+    /* padding: 5px 0; */
     position: absolute;
     z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
+    /* bottom: 126px; */
+    /* left: 50%; */
+    /* margin-left: -60px; */
     opacity: 0;
     transition: opacity .3s;
+    right: 266px;
 }
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
