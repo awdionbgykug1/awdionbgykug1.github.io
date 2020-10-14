@@ -3,9 +3,12 @@ body {
     background: #000000;
     font-family: sans-serif;
     font-weight: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-.countdown-title {
+.countdown-title,
+h2 {
     color: #cf00cf;
     font-weight: 100;
     font-size: 65px;
@@ -67,13 +70,8 @@ body {
     background-color: black;
     color: #0bbd06;
     text-align: start;
-    /* border-radius: 6px; */
-    /* padding: 5px 0; */
     position: absolute;
     z-index: 1;
-    /* bottom: 126px; */
-    /* left: 50%; */
-    /* margin-left: -60px; */
     opacity: 0;
     transition: opacity .5s;
     right: -10px;
@@ -82,4 +80,9 @@ body {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+
+hr {
+    width: 80%;
+    margin: 50px auto;
 }
