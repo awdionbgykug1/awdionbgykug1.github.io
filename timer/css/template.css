@@ -5,6 +5,8 @@ body {
     font-weight: 100;
     overflow-x: hidden;
     overflow-y: auto;
+    margin: auto;
+    display: table;
 }
 
 .countdown-title,
@@ -25,13 +27,17 @@ h2 {
     font-size: 30px;
 }
 
+.countdown::after {
+    content: hr;
+}
+
 .countdown-number {
     padding: 10px;
     border-radius: 3px;
     display: inline-block;
     border: 12px double #792d00;
     border-radius: 20px;
-    min-width: 1;
+    min-width: 1250px;
 }
 
 .countdown-time {
