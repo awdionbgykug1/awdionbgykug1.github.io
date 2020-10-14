@@ -28,6 +28,7 @@ body {
     display: inline-block;
     border: 12px double #792d00;
     border-radius: 20px;
+    min-width: 1;
 }
 
 .countdown-time {
@@ -52,16 +53,20 @@ body {
     display: inline-block;
 }
 
-.inher:hover {
+.inher {
     color: inherit;
+}
+
+.inher:hover {
+    color: #7efc0000;
 }
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 200px;
+    width: 277px;
     background-color: black;
     color: #0bbd06;
-    text-align: center;
+    text-align: start;
     /* border-radius: 6px; */
     /* padding: 5px 0; */
     position: absolute;
@@ -71,7 +76,7 @@ body {
     /* margin-left: -60px; */
     opacity: 0;
     transition: opacity .5s;
-    right: 266px;
+    right: -10px;
 }
 
 .tooltip:hover .tooltiptext {
