@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div id="progress-bar"></div>
     <div class="wrapper">
         <h1 class="text-center">Собрание каких-то технологий</h1>
         CONTENT EDITABLE
@@ -166,6 +167,18 @@ filter: unset;</p></code></code>
 
     </div>
 
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
 
     <script>
         document.querySelector(".html").onclick = function() {
