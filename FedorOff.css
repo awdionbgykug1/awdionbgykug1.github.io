@@ -154,10 +154,6 @@ hr {
 
 /*=Layout=*/
 
-.sec-folio .row {
-    margin-bottom: 3em;
-}
-
 .sec-folio img {
     max-width: 100%;
     margin: auto;
@@ -323,19 +319,67 @@ footer {
     color: #ad0000;
 }
 
-div a img {
-    z-index: 1;
-}
 
-div a img:hover {
+/* div a img:hover {
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 80%);
     transform: scale(1.05);
     transition-timing-function: ease;
     transition-duration: .5s;
     z-index: 1111;
+} */
+
+.col-md-4 {
+    margin-bottom: 3rem;
+}
+
+.col-md-4,
+.col-md-4>*,
+.col-md-4>*>* {
+    z-index: 1;
+}
+
+.col-md-4:hover,
+.col-md-4>*:hover,
+.col-md-4>*>*:hover {
+    z-index: 111;
+}
+
+div a img:hover {
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 80%);
+    transform: scale(1.2);
+    transition: .3s ease-in-out;
+}
+
+nav.navbar {
+    z-index: 1111;
+}
+
+iframe {
+    width: -webkit-fill-available;
 }
 
 
-/* a img:hover+a img {
-    z-index: 1;
+/* @media (max-width:1199px) {
+    iframe {
+        margin-left: -.5rem;
+    }
+}
+@media (max-width:991px) {
+    iframe {
+        margin-left: -7rem;
+    }
+}
+@media (max-width:767px) {
+    iframe {
+        margin-left: -7.3rem;
+    }
 } */
+
+.over-hid {
+    overflow-x: hidden;
+}
+
+.freebirdFormviewerViewNavigationPasswordWarning,
+.freebirdFormviewerViewFooterEmbeddedBackground {
+    display: none !important;
+}
