@@ -86,7 +86,7 @@ body {
     background: black;
     cursor: pointer;
     text-decoration: none;
-    animation-duration: .5;
+    box-shadow: 0px 0px 110px 0px rgb(0 31 255);
 }
 
 .container>h1 {
@@ -321,4 +321,8 @@ footer {
 .soc-media-ul a:hover,
 .soc-media-ul a:focus {
     color: #ad0000;
+}
+
+a img:hover {
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 80%);
 }
