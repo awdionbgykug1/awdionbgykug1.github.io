@@ -1,0 +1,653 @@
+<html lang="en">
+<link type="text/css" id="dark-mode" rel="stylesheet" href="">
+<style type="text/css" id="dark-mode-custom-style"></style>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+    <title>CodePen - Furniture Store (dribbble shot by Jekin Gala)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:700|Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            min-height: 100%;
+            background: #a56a44;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: calc(.2vw + 12px);
+            line-height: 1.4;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin-top: 0;
+        }
+        
+        h1 span,
+        h2 span,
+        h3 span,
+        h4 span,
+        h5 span,
+        h6 span,
+        p span {
+            vertical-align: middle;
+        }
+        
+        h1 span+span,
+        h2 span+span,
+        h3 span+span,
+        h4 span+span,
+        h5 span+span,
+        h6 span+span,
+        p span+span {
+            display: -webkit-inline-box;
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        
+        h1 span+span::before,
+        h2 span+span::before,
+        h3 span+span::before,
+        h4 span+span::before,
+        h5 span+span::before,
+        h6 span+span::before,
+        p span+span::before {
+            display: inline-block;
+            content: "";
+            width: 3.5em;
+            height: 1px;
+            background: white;
+            margin: 0 .5em 0 .3em;
+        }
+        
+        h1,
+        .h1,
+        .nav {
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 2.4rem;
+            margin-bottom: 0;
+        }
+        
+        h2,
+        h3,
+        .nav {
+            font-family: 'PT Serif', serif;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0;
+            padding-bottom: .6rem;
+        }
+        
+        h4 {
+            margin-bottom: 0;
+            padding-bottom: 1.6rem;
+        }
+        
+        a {
+            color: inherit;
+        }
+        
+        svg {
+            fill: currentColor;
+        }
+        
+        img,
+        svg {
+            vertical-align: middle;
+        }
+        
+        .logo {
+            text-decoration: none;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+        
+        .header {
+            position: relative;
+            min-height: 100vh;
+            display: grid;
+            grid-template: repeat(3, [row-start] minmax(25vh, 1fr))/repeat(12, [col-start] 1fr);
+            will-change: transform, width;
+            -webkit-transition: 0.5s -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition: 0.5s -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition: 0.5s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition: 0.5s transform cubic-bezier(0.39, 0.575, 0.565, 1), 0.5s -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+        
+        @media (max-width: 700px) {
+            .header {
+                grid-template: repeat(3, [row-start] 1fr)/repeat(6, [col-start] 1fr);
+            }
+        }
+        
+        .header[data-menustate="open"] {
+            -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+            -webkit-animation: expand 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+            animation: expand 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+        }
+        
+        .header[data-menustate="open"] .grid-item {
+            -webkit-animation: shuffle 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+            animation: shuffle 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+        }
+        
+        .header[data-menustate="open"] .logo {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+        
+        .article {
+            padding: 1.6rem 3rem 1.8rem 1.4rem;
+        }
+        
+        .article+.article {
+            margin-top: auto;
+            padding-top: 0;
+        }
+        
+        .article--align-right {
+            text-align: right;
+        }
+        
+        .rotate {
+            display: inline-block;
+            margin: 0;
+        }
+        
+        .rotate--right {
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            -webkit-transform-origin: center right;
+            transform-origin: center right;
+        }
+        
+        .object-fit {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+        
+        .nav,
+        .nav-toggle {
+            position: absolute;
+            color: white;
+        }
+        
+        .nav {
+            width: 50%;
+            height: 100vh;
+            right: 100%;
+            z-index: 1;
+            background: #a56a44;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            justify-content: center;
+            text-align: left;
+            will-change: right;
+            -webkit-transition: 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition: 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+        }
+        
+        @media (max-width: 700px) {
+            .nav {
+                width: 100%;
+            }
+        }
+        
+        .nav a {
+            text-decoration: none;
+            will-change: color, blur;
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            -webkit-transition-delay: var(--delay, 0.5s);
+            transition-delay: var(--delay, 0.5s);
+            opacity: 0;
+            -webkit-filter: blur(2px);
+            filter: blur(2px);
+            margin-left: 18vw;
+        }
+        
+        .nav a+a {
+            margin-top: .6em;
+        }
+        
+        .nav[data-state="open"] {
+            right: 50%;
+            color: white;
+        }
+        
+        @media (max-width: 700px) {
+            .nav[data-state="open"] {
+                right: 10%;
+            }
+        }
+        
+        .nav[data-state="open"] a {
+            opacity: 1;
+            margin-left: 20vw;
+            -webkit-filter: blur(0);
+            filter: blur(0);
+        }
+        
+        .nav-toggle {
+            top: 1rem;
+            left: 1rem;
+            z-index: 2;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        
+        .nav-toggle svg {
+            pointer-events: none;
+        }
+        
+        .nav-toggle .icon--close {
+            display: none;
+        }
+        
+        .nav-toggle[data-menustate="open"] .icon--close {
+            display: initial;
+        }
+        
+        .nav-toggle[data-menustate="open"] .icon--menu {
+            display: none;
+        }
+        
+        .grid-item {
+            background: #a56a44;
+            position: relative;
+            will-change: border;
+        }
+        
+        .grid-item::after {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 0%;
+            background: #a56a44;
+            -webkit-animation: background-swipe-out 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2.1s 1;
+            animation: background-swipe-out 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2.1s 1;
+        }
+        
+        .grid-item--primary {
+            grid-area: span 3 / span 6;
+            display: grid;
+            -webkit-box-align: center;
+            align-items: center;
+            justify-items: start;
+        }
+        
+        .grid-item--primary>img,
+        .grid-item--primary>.logo {
+            grid-area: 1 / 1 / -1 / -1;
+        }
+        
+        .grid-item--secondary {
+            grid-area: span 2 / span 3;
+            -webkit-animation-duration: 1.4s;
+            animation-duration: 1.4s;
+        }
+        
+        .grid-item--tertiary {
+            background: #898979;
+            grid-area: span 1 / span 2;
+            -webkit-animation-duration: 1.8s;
+            animation-duration: 1.8s;
+        }
+        
+        .grid-item--content {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+        
+        .grid-item .logo {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        
+        .loading-overlay {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            place-items: center;
+            margin: -200vh -200vw;
+            will-change: transform, padding, opacity;
+            -webkit-animation: hide-overlay 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+            animation: hide-overlay 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+        
+        .loading-overlay__content {
+            position: relative;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            padding: 50vw 50vh;
+            will-change: transform, padding, opacity;
+            -webkit-animation: rotate-expand-out 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+            animation: rotate-expand-out 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+        }
+        
+        .loading-overlay__content::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: #a56a44;
+            will-change: width;
+            -webkit-animation: background-swipe-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+            animation: background-swipe-in 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) 1;
+        }
+        
+        @-webkit-keyframes background-swipe-in {
+            from {
+                width: 0%;
+            }
+        }
+        
+        @keyframes background-swipe-in {
+            from {
+                width: 0%;
+            }
+        }
+        
+        @-webkit-keyframes background-swipe-out {
+            0%,
+            65% {
+                width: 100%;
+            }
+            100% {
+                width: 0%;
+            }
+        }
+        
+        @keyframes background-swipe-out {
+            0%,
+            65% {
+                width: 100%;
+            }
+            100% {
+                width: 0%;
+            }
+        }
+        
+        @-webkit-keyframes rotate-expand-out {
+            0%,
+            15%,
+            30%,
+            50%,
+            65%,
+            95%,
+            100% {
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                padding: .2em 2em;
+                opacity: 1;
+            }
+            30%,
+            50% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                padding: 4em 2.4em;
+            }
+            65%,
+            95% {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                padding: 50vw 50vh;
+            }
+            100% {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                padding: 50vw 50vh;
+            }
+        }
+        
+        @keyframes rotate-expand-out {
+            0%,
+            15%,
+            30%,
+            50%,
+            65%,
+            95%,
+            100% {
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                padding: .2em 2em;
+                opacity: 1;
+            }
+            30%,
+            50% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                padding: 4em 2.4em;
+            }
+            65%,
+            95% {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                padding: 50vw 50vh;
+            }
+            100% {
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+                padding: 50vw 50vh;
+            }
+        }
+        
+        @-webkit-keyframes hide-overlay {
+            0%,
+            90% {
+                opacity: 1;
+                visibility: visible;
+                background: white;
+            }
+            95% {
+                background: transparent;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        @keyframes hide-overlay {
+            0%,
+            90% {
+                opacity: 1;
+                visibility: visible;
+                background: white;
+            }
+            95% {
+                background: transparent;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        @-webkit-keyframes expand {
+            0%,
+            100% {
+                width: 100%;
+            }
+            50% {
+                width: 110vw;
+            }
+        }
+        
+        @keyframes expand {
+            0%,
+            100% {
+                width: 100%;
+            }
+            50% {
+                width: 110vw;
+            }
+        }
+        
+        @-webkit-keyframes shuffle {
+            0%,
+            90% {
+                border-left: 0 solid #a56a44;
+            }
+            50% {
+                border-left: 2vw solid #a56a44;
+            }
+        }
+        
+        @keyframes shuffle {
+            0%,
+            90% {
+                border-left: 0 solid #a56a44;
+            }
+            50% {
+                border-left: 2vw solid #a56a44;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body translate="no" class="vsc-initialized">
+    <button class="nav-toggle" data-menustate="closed">
+	<svg class="icon icon--menu" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0 0h24v24H0z" fill="none"></path>
+		<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+	</svg>
+	<svg class="icon icon--close" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+		<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+		<path d="M0 0h24v24H0z" fill="none"></path>
+	</svg>
+</button>
+    <nav class="nav" data-state="closed">
+        <a href="#" style="--delay: .35s">О нас</a>
+        <a href="#" style="--delay: .4s">Студия</a>
+        <a href="#" style="--delay: .45s">Предложения</a>
+        <a href="#" style="--delay: .5s">Контакты</a>
+    </nav>
+    <header class="header" data-menustate="closed">
+        <div class="grid-item  grid-item--primary">
+            <img src="https://images.unsplash.com/photo-1485277531869-f71504d462e5?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=c6a0444526f6da20a3492a305b19846e&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" class="object-fit" alt="chair">
+            <a href="#" class="logo">
+                <h1>Charm</h1>
+            </a>
+        </div>
+        <div class="grid-item grid-item--secondary  grid-item--content">
+            <article class="article  article--align-right">
+                <h5 class="rotate rotate--right">Made in<br>Mongolia</h5>
+            </article>
+            <article class="article">
+                <h4><span>19XX</span> <span>20XX</span></h4>
+                <h2>Lorem</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, doloremque! Dolore, quod corrupti voluptatibus magnam nesciunt corporis aspernatur tenetur? Laudantium inventore nesciunt maiores ipsum aliquid sed ad fugiat, eum itaque
+                    officiis. Dicta, cupiditate eius quos nihil animi libero iure veritatis necessitatibus sed at. Hic quidem nobis blanditiis, quod ad fugiat. Eaque, unde! A amet asperiores qui iure ipsa error impedit nobis minus blanditiis ad.</p>
+            </article>
+        </div>
+        <div class="grid-item grid-item--secondary">
+            <img src="https://images.unsplash.com/photo-1496154077138-22d8a3b92e8b?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=2c2d9a83fdebee2ca48e816da35de74f&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" class="object-fit" alt="chair">
+        </div>
+        <div class="grid-item grid-item--tertiary">
+            <img src="https://images.unsplash.com/photo-1503975817393-b3891b7a3b81?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=9429bb5eda4dd7617a61f11f159bc0f2&amp;auto=format&amp;fit=crop&amp;w=1349&amp;q=80" class="object-fit" alt="chair">
+        </div>
+        <div class="grid-item grid-item--tertiary grid-item--content">
+            <article class="article">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, vero? </p>
+                <a href="#" style="font-size: x-large;">Subscribe</a>
+            </article>
+        </div>
+        <div class="grid-item grid-item--tertiary">
+            <img src="https://images.unsplash.com/photo-1417976528056-3c9bbbb5456c?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=72f2b73c3e8892ff6a59e247557f3b47&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" class="object-fit" alt="chair">
+        </div>
+    </header>
+
+    <div class="loading-overlay">
+        <span class="loading-overlay__content h1">Charm</span>
+    </div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+
+    <script id="rendered-js">
+        document.body.children[0].addEventListener("click", event => {
+            const nav = document.querySelector("nav");
+            const header = document.querySelector("header");
+
+            if (event.target.dataset.menustate == "closed") {
+                event.target.dataset.menustate = nav.dataset.state = header.dataset.menustate =
+                    "open";
+            } else {
+                event.target.dataset.menustate = nav.dataset.state = header.dataset.menustate =
+                    "closed";
+            }
+        });
+        //# sourceURL=pen.js
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,2495 @@
+<html lang="en">
+<link type="text/css" id="dark-mode" rel="stylesheet" href="">
+<style type="text/css" id="dark-mode-custom-style"></style>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+    <title>CodePen - Portfolio Page</title>
+    <meta content="#181d23" name="theme-color">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="author" content="Yago Estévez">
+    <meta name="description" content="Portfolio Website by Yago Estévez">
+    <meta name="keywords" content="portfolio, css, javascript, software, coding, programming, web, development, developer, fullstack, frontend, freecodecamp, es2015">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <style>
+        /* Made by Yago Estévez (Twitter: @yagoestevez.com) */
+        
+        *,
+        *::before,
+        *::after,
+         :root {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @import 'https://fonts.googleapis.com/css?family=Overlock:400,400i,700|Oleo+Script';
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            color: #252934;
+            background: #fafafa;
+            font-size: 62.5%;
+            font-family: 'Overlock', Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        a,
+        a:visited {
+            color: #252934;
+            font-size: 1.4rem;
+            text-decoration: none;
+            -webkit-transition: 200ms;
+            transition: 200ms;
+        }
+        
+        a:hover,
+        a:active {
+            color: #f300b4;
+        }
+        /*****************
+   *****************
+      MENU STYLES
+   *****************
+   *****************/
+        /***** Overlay Layer *****/
+        
+        .menu-container>.overlay,
+        .menu-container.active>.overlay {
+            position: absolute;
+            right: 0;
+            height: calc( 100vh - 120px);
+            width: calc( 100vw - 120px);
+            background: #fafafa;
+        }
+        
+        .menu-container.active>.overlay {
+            -webkit-animation: overlay-slide-in 300ms forwards 300ms;
+            animation: overlay-slide-in 300ms forwards 300ms;
+        }
+        
+        @-webkit-keyframes overlay-slide-in {
+            from {
+                width: calc( 100vw - 120px);
+            }
+            to {
+                width: 0;
+            }
+        }
+        
+        @keyframes overlay-slide-in {
+            from {
+                width: calc( 100vw - 120px);
+            }
+            to {
+                width: 0;
+            }
+        }
+        
+        .menu-container>.overlay {
+            -webkit-animation: overlay-slide-out 300ms forwards;
+            animation: overlay-slide-out 300ms forwards;
+        }
+        
+        @-webkit-keyframes overlay-slide-out {
+            from {
+                left: 0;
+                width: 0;
+            }
+            to {
+                left: 0;
+                width: calc( 100vw - 120px);
+            }
+        }
+        
+        @keyframes overlay-slide-out {
+            from {
+                left: 0;
+                width: 0;
+            }
+            to {
+                left: 0;
+                width: calc( 100vw - 120px);
+            }
+        }
+        /***** Menu Layer *****/
+        
+        .menu-container {
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            background: #202934;
+            border: 60px solid #181d23;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .menu-container::before,
+        .menu-container::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            min-height: 100vh;
+            z-index: -1;
+        }
+        
+        .menu-container::before {
+            background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true);
+        }
+        
+        .menu-container::after {
+            background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Trees.svg?sanitize=true) bottom repeat-x;
+        }
+        
+        .menu-container.deactive {
+            -webkit-animation: fade-out 600ms forwards;
+            animation: fade-out 600ms forwards;
+        }
+        
+        @-webkit-keyframes fade-out {
+            0% {
+                opacity: 1;
+                z-index: 999;
+            }
+            50% {
+                opacity: 1;
+                z-index: 999;
+            }
+            100% {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+        
+        @keyframes fade-out {
+            0% {
+                opacity: 1;
+                z-index: 999;
+            }
+            50% {
+                opacity: 1;
+                z-index: 999;
+            }
+            100% {
+                opacity: 0;
+                z-index: -1;
+            }
+        }
+        
+        .menu-container.active {
+            -webkit-animation: fade-in 300ms forwards;
+            animation: fade-in 300ms forwards;
+        }
+        
+        @-webkit-keyframes fade-in {
+            from {
+                opacity: 0;
+                z-index: -1;
+            }
+            to {
+                opacity: 1;
+                z-index: 999;
+            }
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                z-index: -1;
+            }
+            to {
+                opacity: 1;
+                z-index: 999;
+            }
+        }
+        /***** Menu Items: Animation *****/
+        
+        .menu-container ul,
+        .menu-container .social {
+            margin-left: -80px;
+            opacity: 0;
+            -webkit-animation: slide-out 200ms forwards;
+            animation: slide-out 200ms forwards;
+        }
+        
+        .menu-container ul {
+            list-style-type: none !important;
+            font-size: 3rem;
+        }
+        
+        @-webkit-keyframes slide-out {
+            from {
+                opacity: 1;
+                margin-left: 0px;
+            }
+            to {
+                opacity: 0;
+                margin-left: -80px;
+            }
+        }
+        
+        @keyframes slide-out {
+            from {
+                opacity: 1;
+                margin-left: 0px;
+            }
+            to {
+                opacity: 0;
+                margin-left: -80px;
+            }
+        }
+        
+        .menu-container.active ul,
+        .menu-container.active .social {
+            -webkit-animation: slide-in 300ms forwards 600ms;
+            animation: slide-in 300ms forwards 600ms;
+        }
+        
+        @-webkit-keyframes slide-in {
+            from {
+                opacity: 0;
+                margin-left: -80px;
+            }
+            to {
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+        
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                margin-left: -80px;
+            }
+            to {
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+        /***** Menu Items: Hover Animation *****/
+        
+        .menu-container ul li {
+            border-left: .2rem solid transparent;
+            -webkit-transition: border-left 200ms;
+            transition: border-left 200ms;
+        }
+        
+        .menu-container ul li a {
+            font-size: 3rem;
+            padding-left: .5rem;
+        }
+        
+        .menu-container ul li a::after {
+            content: ' »';
+            font-size: 2.5rem;
+            color: transparent;
+            -webkit-transition: color 200ms;
+            transition: color 200ms;
+        }
+        
+        .menu-container ul li a:hover::after {
+            content: ' »';
+            color: #f300b4;
+        }
+        
+        .social {
+            padding: 1rem 0 0 .5rem;
+        }
+        
+        .social a {
+            font-size: 1.5rem;
+            padding: .2rem;
+        }
+        
+        .menu-container a,
+        .menu-container a:visited {
+            color: #fafafa;
+        }
+        
+        .menu-container a:hover,
+        .menu-container a:active {
+            color: #f300b4;
+        }
+        
+        @media only screen and (max-width: 649px) {
+            .menu-container {
+                border: none;
+            }
+            .menu-container>.overlay,
+            .menu-container.active>.overlay {
+                height: 100vh;
+                width: 100vw;
+            }
+            .menu-container.active>.overlay {
+                -webkit-animation: overlay-slide-in 300ms forwards 300ms;
+                animation: overlay-slide-in 300ms forwards 300ms;
+            }
+            @-webkit-keyframes overlay-slide-in {
+                from {
+                    width: 100vw;
+                }
+                to {
+                    width: 0;
+                }
+            }
+            @keyframes overlay-slide-in {
+                from {
+                    width: 100vw;
+                }
+                to {
+                    width: 0;
+                }
+            }
+            .menu-container>.overlay {
+                -webkit-animation: overlay-slide-out 300ms forwards;
+                animation: overlay-slide-out 300ms forwards;
+            }
+            @-webkit-keyframes overlay-slide-out {
+                from {
+                    left: 0;
+                    width: 0;
+                }
+                to {
+                    left: 0;
+                    width: 100vw;
+                }
+            }
+            @keyframes overlay-slide-out {
+                from {
+                    left: 0;
+                    width: 0;
+                }
+                to {
+                    left: 0;
+                    width: 100vw;
+                }
+            }
+        }
+        /*****************
+   *****************
+      NAV STYLES
+   *****************
+   *****************/
+        
+        #navbar {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            padding: 1rem;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+        
+        #navbar.bg-active {
+            background: #181d23;
+        }
+        
+        #navbar .nav-wrapper {
+            width: 100%;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            max-width: 1400px;
+            padding: 0 2rem;
+        }
+        
+        #navbar .brand {
+            font-size: 1.6rem;
+            color: #fafafa;
+            cursor: default;
+        }
+        /***** Menu Button *****/
+        
+        .menu-button {
+            position: relative;
+            height: 22px;
+            width: 30px;
+            outline: none;
+        }
+        
+        .menu-button span,
+        .menu-button span::before,
+        .menu-button span::after {
+            position: absolute;
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: #fafafa;
+            -webkit-transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+            transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        
+        .menu-button span {
+            position: relative;
+            display: block;
+            top: 50%;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+        }
+        
+        .menu-button span::before {
+            top: -8px;
+        }
+        
+        .menu-button span::after {
+            top: 8px;
+        }
+        
+        .menu-button:hover>span,
+        .menu-button:hover>span::before,
+        .menu-button:hover>span::after {
+            background: #f300b4;
+        }
+        
+        .menu-button.active>span {
+            background: transparent;
+        }
+        
+        .menu-button.active>span::before {
+            -webkit-transform: rotate(-225deg);
+            transform: rotate(-225deg);
+            top: 0px;
+        }
+        
+        .menu-button.active>span::after {
+            -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+            top: 0px;
+        }
+        
+        @media only screen and (max-width: 849px) {
+            #navbar {
+                background: #181d23aa;
+            }
+        }
+        /*****************
+   *****************
+     HEADER STYLES
+   *****************
+   *****************/
+        
+        #welcome-section {
+            background: #202736;
+            background: -webkit-gradient(linear, left top, left bottom, from(#181d23), color-stop(80%, #202736));
+            background: linear-gradient(to bottom, #181d23 0%, #202736 80%);
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
+            min-height: 100vh;
+            margin: 0 auto;
+            z-index: 1;
+        }
+        
+        #welcome-section::before {
+            content: '';
+            position: fixed;
+            background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true);
+            background-attachment: fixed;
+            width: 100%;
+            min-height: 100vh;
+            z-index: -1;
+            opacity: 0;
+            -webkit-animation: stars-move-in 1000ms 300ms forwards;
+            animation: stars-move-in 1000ms 300ms forwards;
+        }
+        
+        @-webkit-keyframes stars-move-in {
+            from {
+                background-position-y: -100px;
+            }
+            to {
+                opacity: 1;
+                background-position-y: 0;
+            }
+        }
+        
+        @keyframes stars-move-in {
+            from {
+                background-position-y: -100px;
+            }
+            to {
+                opacity: 1;
+                background-position-y: 0;
+            }
+        }
+        
+        .forest {
+            position: absolute;
+            bottom: -300px;
+            left: 0;
+            background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Trees.svg?sanitize=true) bottom left repeat-x;
+            background-size: cover;
+            width: 100%;
+            height: 80%;
+            opacity: 0;
+            -webkit-animation: forest-move-in 1000ms 500ms forwards;
+            animation: forest-move-in 1000ms 500ms forwards;
+            border-bottom: 300px solid #181d23;
+        }
+        
+        @-webkit-keyframes forest-move-in {
+            from {
+                background-position-y: 150%;
+            }
+            to {
+                opacity: 1;
+                background-position-y: 100%;
+            }
+        }
+        
+        @keyframes forest-move-in {
+            from {
+                background-position-y: 150%;
+            }
+            to {
+                opacity: 1;
+                background-position-y: 100%;
+            }
+        }
+        
+        .silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Silhouette.svg?sanitize=true) bottom left no-repeat;
+            width: 50%;
+            height: 50%;
+            opacity: 0;
+            -webkit-animation: silhouette-move-in 1000ms 800ms forwards;
+            animation: silhouette-move-in 1000ms 800ms forwards;
+        }
+        
+        @-webkit-keyframes silhouette-move-in {
+            from {
+                background-position-x: 0;
+            }
+            to {
+                opacity: 1;
+                background-position-x: 50%;
+            }
+        }
+        
+        @keyframes silhouette-move-in {
+            from {
+                background-position-x: 0;
+            }
+            to {
+                opacity: 1;
+                background-position-x: 50%;
+            }
+        }
+        
+        .moon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            position: fixed;
+            background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Moon.svg?sanitize=true) right 150% no-repeat;
+            background-size: 40% 40%;
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0;
+            -webkit-animation: moon-move-in 1.2s 1s forwards;
+            animation: moon-move-in 1.2s 1s forwards;
+        }
+        
+        @-webkit-keyframes moon-move-in {
+            from {
+                opacity: 0;
+                background-position: right 150%;
+            }
+            to {
+                opacity: 1;
+                background-position: top right;
+            }
+        }
+        
+        @keyframes moon-move-in {
+            from {
+                opacity: 0;
+                background-position: right 150%;
+            }
+            to {
+                opacity: 1;
+                background-position: top right;
+            }
+        }
+        /* Copy and CTA */
+        
+        #welcome-section .container {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            right: 25%;
+            opacity: 0;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            -webkit-animation: text-fade-in 1000ms 800ms forwards;
+            animation: text-fade-in 1000ms 800ms forwards;
+        }
+        
+        @-webkit-keyframes text-fade-in {
+            from {
+                right: 0;
+            }
+            to {
+                opacity: 1;
+                right: 25%;
+            }
+        }
+        
+        @keyframes text-fade-in {
+            from {
+                right: 0;
+            }
+            to {
+                opacity: 1;
+                right: 25%;
+            }
+        }
+        
+        #welcome-section .container h1 {
+            font-size: 4rem;
+            font-weight: normal;
+            font-style: italic;
+            color: #fafafa;
+            line-height: 3rem;
+        }
+        
+        #welcome-section .container h1 .line:first-child {
+            margin-left: 1rem;
+        }
+        
+        #welcome-section .container h1 .line:last-child {
+            margin-left: 2rem;
+        }
+        
+        #welcome-section .container .buttons {
+            display: -webkit-box;
+            display: flex;
+            margin-top: 1rem;
+        }
+        
+        #welcome-section .container .buttons a,
+        #welcome-section .container .buttons a:visited {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #fafafa;
+            color: #fafafa;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+        
+        #welcome-section .container .buttons a:hover,
+        #welcome-section .container .buttons a:active {
+            border: 1px solid #f300b4;
+            -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 100px -20px #f300b4;
+        }
+        
+        #welcome-section .container .buttons a.cta,
+        #welcome-section .container .buttons a.cta:visited {
+            background: #f300b4;
+            border: 1px solid transparent;
+            color: #fafafa;
+            font-weight: bold;
+        }
+        
+        #welcome-section .container .buttons a.cta:hover,
+        #welcome-section .container .buttons a.cta:active {
+            background: transparent;
+            border: 1px solid #f300b4;
+        }
+        
+        #welcome-section .container .buttons a:first-child {
+            margin-right: 1rem;
+        }
+        
+        .line {
+            display: block;
+        }
+        
+        .color {
+            color: #f300b4;
+            font-style: italic;
+        }
+        
+        @media only screen and (max-width: 649px) {
+            #welcome-section .container {
+                right: 50%;
+                top: 10%;
+                width: 80%;
+                -webkit-transform: translate(50%, 0);
+                transform: translate(50%, 0);
+                -webkit-animation: text-fade-in 1000ms 800ms forwards;
+                animation: text-fade-in 1000ms 800ms forwards;
+            }
+            @-webkit-keyframes text-fade-in {
+                from {
+                    right: 0;
+                }
+                to {
+                    opacity: 1;
+                    right: 50%;
+                }
+            }
+            @keyframes text-fade-in {
+                from {
+                    right: 0;
+                }
+                to {
+                    opacity: 1;
+                    right: 50%;
+                }
+            }
+            .silhouette {
+                width: 100%;
+            }
+        }
+        /*****************
+   *****************
+     ABOUT STYLES
+   *****************
+   *****************/
+        
+        #about {
+            height: 100%;
+            min-height: 100vh;
+            font-size: 1.4rem;
+            position: relative;
+            background: #fafafa;
+            -webkit-clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 80% 95%, 0 100%);
+            clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 80% 95%, 0 100%);
+            z-index: 5;
+            background: #fafafa url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Author_BG.jpg) center right no-repeat;
+            background-attachment: fixed;
+        }
+        
+        #about .wrapper {
+            padding: 15rem 10rem 12rem;
+            height: 100%;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        #about article {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1rem;
+            padding: 3rem 0;
+        }
+        
+        #about .title {
+            grid-column-end: span 4;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        
+        #about .title h3 {
+            font-size: 2.4rem;
+        }
+        
+        #about .separator {
+            background: #f300b4;
+            width: 150px;
+            height: 2px;
+            margin: 1rem 0;
+            padding: 0;
+        }
+        
+        #about .subtitle {
+            font-size: 1.6rem;
+            text-align: center;
+            color: inherit;
+            padding-bottom: 1.5rem;
+        }
+        
+        #about p {
+            padding-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.9rem;
+        }
+        
+        #about .desc.full {
+            grid-column-end: span 4;
+            margin-bottom: 2rem;
+        }
+        
+        #about .desc {
+            grid-column-end: span 2;
+            background: #ffffffaa;
+            padding: 2rem;
+            text-align: justify;
+        }
+        
+        @media only screen and (max-width: 1149px) {
+            #about article {
+                grid-template-columns: 1fr;
+                grid-gap: 0;
+            }
+            #about .desc.full {
+                grid-column-end: -1;
+            }
+            #about .desc {
+                grid-column-end: -1;
+            }
+        }
+        
+        @media only screen and (max-width: 949px) {
+            #about {
+                -webkit-clip-path: polygon(0 0, 20% 2%, 100% 0, 100% 100%, 80% 98%, 0 100%);
+                clip-path: polygon(0 0, 20% 2%, 100% 0, 100% 100%, 80% 98%, 0 100%);
+                background-position: top left;
+                background-size: cover;
+            }
+        }
+        
+        @media only screen and (max-width: 649px) {
+            #about .wrapper {
+                padding: 10rem 2rem 8rem;
+            }
+        }
+        /*****************
+   *****************
+    PROJECTS STYLES
+   *****************
+   *****************/
+        
+        #projects {
+            min-height: 100vh;
+            font-size: 1.4rem;
+            position: relative;
+            background: #f0f0f0;
+            background: linear-gradient(215deg, #f0f0f0 0%, #fafafa 100%);
+            margin-top: -10rem;
+            z-index: 1;
+        }
+        
+        #projects a,
+        #projects a:visited {
+            color: #f300b4;
+        }
+        
+        #projects a:hover,
+        #projects a:active {
+            color: #252934;
+        }
+        /* Container */
+        
+        #projects .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 12rem 5rem 8rem;
+        }
+        /* Heading */
+        
+        #projects .heading .title {
+            text-align: center;
+            font-size: 2.4rem;
+            line-height: 2.4rem;
+        }
+        
+        #projects .heading .separator {
+            background: #f300b4;
+            width: 150px;
+            height: 2px;
+            margin: 1rem auto;
+        }
+        
+        #projects .heading .subtitle {
+            font-size: 1.4rem;
+            text-align: center;
+            width: 70%;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        /* Single Project */
+        
+        #projects .project {
+            margin: 1rem auto;
+            width: 70%;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 2rem;
+        }
+        /* Project Image */
+        
+        #projects .project .project-link {
+            display: block;
+            margin: auto 0;
+            color: #252934;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #fafafa;
+            box-shadow: 0 20px 10px -10px #25293450;
+            -webkit-transition: 300ms;
+            transition: 300ms;
+        }
+        
+        #projects .project .project-link:hover {
+            box-shadow: 0 50px 15px -30px #25293450;
+        }
+        
+        #projects .project .project-link:hover>img {
+            -webkit-filter: saturate(1);
+            filter: saturate(1);
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+        
+        #projects .project .project-image {
+            width: 100%;
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+            -webkit-filter: saturate(0);
+            filter: saturate(0);
+            -webkit-transition: all 300ms;
+            transition: all 300ms;
+        }
+        /* Project Details */
+        
+        #projects .project .project-details {
+            margin: auto 0;
+        }
+        
+        #projects .project-details .project-tile {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 0;
+            color: #f300b4;
+        }
+        /* Icons */
+        
+        #projects .project-details .icons {
+            margin: 0;
+            color: #252934;
+        }
+        
+        #projects .project-details .icons i {
+            margin-right: .4rem;
+            font-weight: normal;
+            font-size: 1.4rem;
+        }
+        /* Text */
+        
+        #projects .project-details small {
+            font-style: italic;
+        }
+        
+        #projects .project-details p {
+            margin: 1rem 0;
+        }
+        /* Buttons */
+        
+        #projects .project-details .buttons {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+        
+        #projects .project-details .buttons a {
+            width: 49%;
+            padding: .5rem;
+            border: none;
+            border-bottom: 1px solid #f300b4;
+            color: #252934;
+            background: #fafafa;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        #projects .project-details .buttons a:hover {
+            background: #f300b4;
+            color: #fafafa;
+        }
+        
+        #projects .project-details .buttons i {
+            font-size: .8rem;
+            vertical-align: middle;
+            margin-left: .5rem;
+            ;
+        }
+        
+        @media only screen and (max-width: 1149px) {
+            #projects .project {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+        
+        @media only screen and (max-width: 949px) {
+            #projects .project {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media only screen and (max-width: 649px) {
+            #projects {
+                background: #f0f0f0;
+            }
+            #projects .projects-container {
+                padding: 12rem 0 8rem;
+            }
+            #projects .project {
+                padding: 2rem 0;
+            }
+        }
+        /*****************
+   *****************
+     CONTACT STYLES
+   *****************
+   *****************/
+        
+        #contact {
+            background: #181d23 url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/envelope.svg?sanitize=true) no-repeat right;
+            -webkit-clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 20% 100px, 100% 0, 100% 100%, 0 100%);
+            color: #fafafa;
+            min-height: 100vh;
+            width: 100%;
+            padding: 5rem 3rem;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+            margin: -100px 0 140px;
+            z-index: 1;
+        }
+        
+        #contact .container {
+            width: 70%;
+            max-width: 1200px;
+            padding: 25vh 0;
+        }
+        
+        #contact .container .heading-wrapper {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+        
+        #contact .heading-wrapper .social a {
+            color: #fafafa;
+        }
+        
+        #contact .heading-wrapper .social a:hover {
+            color: #f300b4;
+        }
+        
+        .heading-wrapper .heading .title {
+            font-size: 3rem;
+            line-height: 2.4rem;
+        }
+        
+        .heading-wrapper .heading .separator {
+            background: #f300b4;
+            width: 150px;
+            height: 2px;
+            margin: 1rem 0;
+        }
+        
+        .heading-wrapper .heading .subtitle {
+            font-size: 1.4rem;
+        }
+        
+        #contact-form {
+            margin-top: 1rem;
+        }
+        
+        input,
+        textarea {
+            border: none;
+            padding: 1rem;
+            font-family: 'Overlock', Arial, Helvetica, sans-serif;
+            width: 100%;
+            height: 40%;
+            -webkit-transition: 200ms;
+            transition: 200ms;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="text"]:not(output):not(:focus),
+        input[type="email"]:not(output):not(:focus),
+        textarea {
+            border-bottom: 1px solid #fafafa;
+            background: transparent;
+            color: #fafafa;
+            font-size: 1.8rem;
+            box-shadow: none;
+            outline: none;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="text"]:not(output):focus,
+        input[type="email"]:not(output):focus,
+        textarea:focus {
+            border-bottom: 1px solid #f300b4;
+        }
+        
+        input[type="submit"] {
+            background: #f300b4;
+            color: #fafafa;
+            margin-top: 1rem;
+            width: auto;
+            float: right;
+        }
+        
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            cursor: pointer;
+            color: #333;
+            background: #fafafa;
+        }
+        
+         ::-webkit-input-placeholder {
+            color: #fafafa;
+        }
+        
+         ::-moz-placeholder {
+            color: #fafafa;
+        }
+        
+         :-ms-input-placeholder {
+            color: #fafafa;
+        }
+        
+         ::-ms-input-placeholder {
+            color: #fafafa;
+        }
+        
+         ::placeholder {
+            color: #fafafa;
+        }
+        /** Email to avoid spam **/
+        
+        .mail {
+            display: inline-block;
+            font-style: italic;
+        }
+        
+        .mail .at,
+        .mail .dot {
+            font-size: .9rem;
+            margin: 0 .1rem;
+            color: #f300b4;
+        }
+        
+        @media only screen and (max-width: 1149px) {
+            #contact .social a {
+                display: block;
+            }
+        }
+        
+        @media only screen and (max-width: 649px) {
+            #contact {
+                -webkit-clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 0 100%);
+                padding: 0;
+            }
+        }
+        /*****************
+   *****************
+     FOOTER STYLES
+   *****************
+   *****************/
+        
+        footer {
+            font-size: 1rem;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: #fafafa;
+            z-index: 0;
+        }
+        
+        footer .wrapper {
+            display: -webkit-box;
+            display: flex;
+            width: 100%;
+            padding: 2rem;
+            max-width: 1400px;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+        
+        @media only screen and (max-width: 649px) {
+            footer .wrapper {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                flex-direction: column;
+            }
+            footer .wrapper h3 {
+                padding-bottom: .8rem;
+            }
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no" class="vsc-initialized">
+    <div id="app">
+        <div class="menu-container false">
+            <div class="overlay"></div>
+            <div class="menu-items">
+                <ul>
+                    <li><a href="#welcome-section">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#projects">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+                <div class="social">
+                    <a href="https://twitter.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"> <i class="fab fa-twitter"></i></a>
+                    <a id="profile-link" href="https://github.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"> <i class="fab fa-github"></i></a>
+                    <a href="https://codepen.io/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Codepen Profile"> <i class="fab fa-codepen"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav id="navbar" class="">
+            <div class="nav-wrapper">
+                <p class="brand">yago<strong>estévez</strong></p><a class="menu-button"><span></span></a></div>
+        </nav>
+        <header id="welcome-section" style="visibility: visible;">
+            <div class="forest" style="bottom: -300px;"></div>
+            <div class="silhouette" style="bottom: 0px;"></div>
+            <div class="moon"></div>
+            <div class="container">
+                <h1><span class="line">I do</span><span class="line">graphic design</span><span class="line"><span class="color">&amp;</span> code.</span>
+                </h1>
+                <div class="buttons"><a href="#projects">my portfolio</a><a href="#contact" class="cta">get in touch</a></div>
+            </div>
+        </header>
+        <section id="about">
+            <div class="wrapper">
+                <article>
+                    <div class="title">
+                        <h3>Who's this guy?</h3>
+                        <p class="separator"></p>
+                    </div>
+                    <div class="desc full">
+                        <h4 class="subtitle">My name is Yago.</h4>
+                        <p>I am a web developer and UX designer based in the beautiful west coast of Spain, Galicia.</p>
+                        <p>I really enjoy solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better. I also love photography, a hobby I'm taking along since the good old film cameras. Oh, and
+                            rice with milk; I have a passion for rice with milk!</p>
+                    </div>
+                    <div class="title">
+                        <h3>What does he do?</h3>
+                        <p class="separator"></p>
+                    </div>
+                    <div class="desc">
+                        <h4 class="subtitle">I'm a programmer.</h4>
+                        <p>For the front-end I usually work with Javascript, either standalone or including popular frameworks like ReactJS and VueJS. I also make the web pretty by using Sass, CSS and, whenever needed, any of their friends: Bootstrap, Bulma,
+                            etc.</p>
+                        <p>For the back-end I also work with Javascript (NodeJS, Express, MongoDB, etc). But, of course, whenever the project requires PHP, I do PHP as well (Wordpress, Laravel, etc).</p>
+                    </div>
+                    <div class="desc">
+                        <h4 class="subtitle">Also a designer.</h4>
+                        <p>I feel comfortable working with many Adobe products. Photoshop, Illustrator, InDesign, Lightroom or Xd are some kind of industry standards and I love working with them. I'm not limited to them, though: Gimp, Inkscape or Figma are
+                            also very valid applications that I've been working with.</p>
+                        <p>User interfaces, brochures, books, branding... You name it! As I mentioned, creating pretty things is particularly important for me.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="projects-container">
+                <div class="heading">
+                    <h3 class="title">My Works</h3>
+                    <p class="separator"></p>
+                    <p class="subtitle">Here's a list of <u>most</u> of the projects I've been working on lately. All of these were built during my coding camp adventure on <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>,
+                        where I've been coding for almost 7 months non-stop until I completed all the projects required to get my Full-Stack Developer certification.</p>
+                </div>
+                <div class="projects-wrapper">
+                    <div class="project">
+                        <a class="project-link" href="https://yagoestevez-anon-msg-board.glitch.me/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/AnonMsgBoard.jpg" alt="Screenshot of Anonymous Message Board."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-css3-alt"></i><i class="fab fa-react"></i><i class="fab fa-node"></i></p>Anonymous Message Board. </div><small>Built using Node, Express, MongoDB, CSS + Bulma, React.js and React Router.</small>
+                            <p>This is a full-stack website that I made which lets the users read and post anonymous messages and replies.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/anonymous-message-board" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://yagoestevez-anon-msg-board.glitch.me/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://yagoestevez-stock-price-checker.glitch.me/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/StockPriceChecker.jpg" alt="Screenshot of Stock Price Checker."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-node"></i><i class="fab fa-css3-alt"></i></p>Stock Price Checker. </div><small>Built using Node, Express, MongoDB, JS + jQuery + Axios, CSS + Bootstrap and Pug.</small>
+                            <p>Another full-stack website to check the current value of any requested stock in the market.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-stock-price-checker" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://yagoestevez-stock-price-checker.glitch.me/"
+                                    target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://yagoestevez-personal-library.glitch.me/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/PersonalLibrary.jpg" alt="Screenshot of Personal Library."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-node"></i><i class="fab fa-css3-alt"></i></p>Personal Library. </div><small>Built using Node, Express, MongoDB, JS + jQuery, CSS + Bootstrap and Pug.</small>
+                            <p>A full-stack website to store book titles and comments to each book into a remote database.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-personal-library" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://yagoestevez-personal-library.glitch.me/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://yagoestevez-issue-tracker.glitch.me/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/IssueTracker.jpg" alt="Screenshot of Issue Tracker."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-node"></i><i class="fab fa-css3-alt"></i></p>Issue Tracker. </div><small>Built using Node, Express, MongoDB, JS + jQuery, CSS + Bootstrap and Pug.</small>
+                            <p>Yet another full-stack app to save and manage technical issues to be fixed.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-issue-tracker" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://yagoestevez-issue-tracker.glitch.me/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://yagoestevez-metric-imperial-converter.glitch.me/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/MetricImperialConverter.jpg" alt="Screenshot of Metric-Imperial Converter."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-node"></i><i class="fab fa-css3-alt"></i></p>Metric-Imperial Converter. </div><small>Built using Node, Express, JS + jQuery, CSS + Bootstrap and Pug.</small>
+                            <p>Another full-stack for converting values from the Internation System of Units (Metric) into the imperial units.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-metric-imperial-converter/" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://yagoestevez-metric-imperial-converter.glitch.me/"
+                                    target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://cortala.glitch.me/example" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Cortala.jpg" alt="Screenshot of URL Shortener Microservice."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-node"></i><i class="fab fa-css3-alt"></i></p>URL Shortener Microservice. </div><small>Built using Node, Express, CSS + Bootstrap and Pug.</small>
+                            <p>A microservice which takes a raw URL and makes it a short link to make it easy to sent it through the Internet.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/cortala" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://cortala.glitch.me/example" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://yagoestevez-exercise-tracker.glitch.me" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/ExerciseTracker.jpg" alt="Screenshot of Exercise Tracker."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-vuejs"></i><i class="fab fa-node"></i><i class="fab fa-css3-alt"></i></p>Exercise Tracker. </div><small>Built using Node, Express, VueJS + Vue Router and CSS + Bootstrap.</small>
+                            <p>A service which lets the users save their daily exercise (or anything) into a log for them to check it later.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/exercise-tracker" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://yagoestevez-exercise-tracker.glitch.me" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/wxjmrB/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/BarChart.jpg" alt="Screenshot of Bar Chart."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="far fa-chart-bar"></i><i class="fab fa-css3-alt"></i></p>Bar Chart. </div><small>Built using CSS, JS and D3.js.</small>
+                            <p>A bar chart representing the evolution of the US GDP.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-barchart" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/wxjmrB/" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/bjZygz/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TreemapDiagram.jpg" alt="Screenshot of Treemap Diagram."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="far fa-chart-bar"></i><i class="fab fa-css3-alt"></i></p>Treemap Diagram. </div><small>Built using CSS, JS and D3.js.</small>
+                            <p>A treemap diagram representing groups of pledges and sales from a particular category.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-treemap-diagram" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/bjZygz/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/NBeaWK/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/ChoroplethMap.jpg" alt="Screenshot of Choropleth Map."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="far fa-chart-bar"></i><i class="fab fa-css3-alt"></i></p>Choropleth Map. </div><small>Built using CSS, JS and D3.js.</small>
+                            <p>A choropleth map representing the educational attainment by county in the U.S.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/fcc-choropleth-map" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/NBeaWK/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/bxgEyd/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/QuotingMachine.jpg" alt="Screenshot of Random Quoting Machine."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-vuejs"></i><i class="fab fa-css3-alt"></i></p>Random Quoting Machine. </div><small>Built using VueJS, Axios and CSS + Bootstrap.</small>
+                            <p>A random quoting app which retrieves pictures and quotes from two different APIs.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/random-quoting-machine" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/bxgEyd/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/ERVONM/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Calculator.jpg" alt="Screenshot of Calculator."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-react"></i><i class="fab fa-css3-alt"></i></p>Calculator. </div><small>Built using React and CSS.</small>
+                            <p>A project on which I built a virtual calculator with its usual features.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/the-calcoolator" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/ERVONM/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/dqJGVa" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TomateTimer.jpg" alt="Screenshot of Pomodoro Timer."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-react"></i><i class="fab fa-css3-alt"></i></p>Pomodoro Timer. </div><small>Built using React, CSS and lots of SVG.</small>
+                            <p>A cute and animated Pomodoro clock to help the users improve their productivity.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/tomate-time" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/dqJGVa" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/KRevzB/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TicTacToe.jpg" alt="Screenshot of TicTacToe Game."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-react"></i><i class="fab fa-css3-alt"></i></p>TicTacToe Game. </div><small>Built using React, CSS and SVG.</small>
+                            <p>A TicTacToe game with a basic AI algorithm made for the legacy front-end projects on FreeCodeCamp.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/TicTacToe" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/KRevzB/" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/xjwVPq/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Twitch.jpg" alt="Screenshot of Twitch Clone."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-vuejs"></i><i class="fab fa-sass"></i></p>Twitch Clone. </div><small>Built using VueJS, Axios and Scss.</small>
+                            <p>Simple Twitch clone using the new Twitch Helix API and made for the legacy front-end projects on FreeCodeCamp.</p>
+                            <div class="buttons"><a href="http://" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/xjwVPq/" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/zWbGmZ/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/WeatherApp.jpg" alt="Screenshot of Weather App."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-vuejs"></i><i class="fab fa-css3-alt"></i></p>Weather App. </div><small>Built using VueJS, Axios and CSS.</small>
+                            <p>App that present the users with the current local weather for their location.</p>
+                            <div class="buttons"><a href="http://" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/zWbGmZ/" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/aaaOxL/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Tribute.jpg" alt="Screenshot of Tribute."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-sass"></i></p>Tribute. </div><small>Built using vanilla Javascript and Scss.</small>
+                            <p>Tribute page to Aaron Swartz, a static website built with SCSS and plain Javascript.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/tribute-to-aaron-swartz" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/aaaOxL/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/bjVgjX/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/SurveyForm.jpg" alt="Screenshot of Survey Form."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-sass"></i></p>Survey Form. </div><small>Built using vanilla Javascript and Scss.</small>
+                            <p>An animated survey form.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/membership-form" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/bjVgjX/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/pOBLeK/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/LandingPage.jpg" alt="Screenshot of Landing Page Example."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-sass"></i></p>Landing Page Example. </div><small>Built using vanilla Javascript and Scss.</small>
+                            <p>A landing page for the Pomodoro Timer I made (shown previously in this section).</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/tomate-timer-landing-page" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/pOBLeK/" target="_blank"
+                                    rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <a class="project-link" href="https://codepen.io/yagoestevez/full/QxOLKX/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Documentify.jpg" alt="Screenshot of Technical Documentation Page."></a>
+                        <div class="project-details">
+                            <div class="project-tile">
+                                <p class="icons"><i class="fab fa-js-square"></i><i class="fab fa-react"></i><i class="fab fa-css3-alt"></i></p>Technical Documentation Page. </div><small>Built using React and CSS.</small>
+                            <p>A technical documentation page made for a little React library I published on NPM.</p>
+                            <div class="buttons"><a href="https://github.com/yagoestevez/documentify" target="_blank" rel="noopener noreferrer">View source <i class="fas fa-external-link-alt"></i></a><a href="https://codepen.io/yagoestevez/full/QxOLKX/" target="_blank" rel="noopener noreferrer">Try it Live <i class="fas fa-external-link-alt"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="heading-wrapper">
+                    <div class="heading">
+                        <p class="title">Want to <br>contact me?</p>
+                        <p class="separator"></p>
+                        <p class="subtitle">Please, use the form below or send an email to <span class="mail">web<i class="fas fa-at at"></i>yagoestevez<i class="fas fa-circle dot"></i>com</span>:</p>
+                    </div>
+                    <div class="social">
+                        <a href="https://twitter.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"> <i class="fab fa-twitter"></i></a>
+                        <a id="profile-link" href="https://github.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"> <i class="fab fa-github"></i></a>
+                        <a href="https://codepen.io/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Codepen Profile"> <i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+                <form id="contact-form" action="#"><input placeholder="Name" name="name" type="text" required=""><input placeholder="Email" name="email" type="email" required=""><textarea placeholder="Message" type="text" name="message"></textarea><input class="button" id="submit" type="submit"
+                        value="Submit"></form>
+            </div>
+        </section>
+        <footer>
+            <div class="wrapper">
+                <h3>THANKS FOR VISITING</h3>
+                <p>© 2020 Yago Estévez.</p>
+                <div class="social">
+                    <a href="https://twitter.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"> <i class="fab fa-twitter"></i></a>
+                    <a id="profile-link" href="https://github.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"> <i class="fab fa-github"></i></a>
+                    <a href="https://codepen.io/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Codepen Profile"> <i class="fab fa-codepen"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script id="rendered-js">
+        function _defineProperty(obj, key, value) {
+            if (key in obj) {
+                Object.defineProperty(obj, key, {
+                    value: value,
+                    enumerable: true,
+                    configurable: true,
+                    writable: true
+                });
+            } else {
+                obj[key] = value;
+            }
+            return obj;
+        } // Made by Yago Estévez (Twitter: @yagoestevez.com)
+
+
+        /***********************
+          Menu Component
+         ***********************/
+
+        const Menu = props => {
+            return (
+                React.createElement("div", {
+                        className: `menu-container ${props.showMenu}`
+                    },
+                    React.createElement("div", {
+                        className: "overlay"
+                    }),
+                    React.createElement("div", {
+                            className: "menu-items"
+                        },
+                        React.createElement("ul", null,
+                            React.createElement("li", null,
+                                React.createElement("a", {
+                                    href: "#welcome-section",
+                                    onClick: props.toggleMenu
+                                }, "HOME")),
+
+
+
+                            React.createElement("li", null,
+                                React.createElement("a", {
+                                    href: "#about",
+                                    onClick: props.toggleMenu
+                                }, "ABOUT")),
+
+
+
+                            React.createElement("li", null,
+                                React.createElement("a", {
+                                    href: "#projects",
+                                    onClick: props.toggleMenu
+                                }, "PORTFOLIO")),
+
+
+
+                            React.createElement("li", null,
+                                React.createElement("a", {
+                                    href: "#contact",
+                                    onClick: props.toggleMenu
+                                }, "CONTACT"))),
+
+
+
+
+                        React.createElement(SocialLinks, null))));
+
+
+
+        };
+
+
+        /***********************
+             Nav Component
+            ***********************/
+
+        const Nav = props => {
+            return (
+                React.createElement(React.Fragment, null,
+                    React.createElement("nav", {
+                            id: "navbar"
+                        },
+                        React.createElement("div", {
+                                className: "nav-wrapper"
+                            },
+                            React.createElement("p", {
+                                    className: "brand"
+                                }, "yago",
+
+                                React.createElement("strong", null, "est\xE9vez")),
+
+                            React.createElement("a", {
+                                    onClick: props.toggleMenu,
+                                    className: props.showMenu === 'active' ? 'menu-button active' : 'menu-button'
+                                },
+
+                                React.createElement("span", null))))));
+
+
+
+
+
+        };
+
+
+
+        /***********************
+             Header Component
+            ***********************/
+
+        const Header = props => {
+            return (
+                React.createElement("header", {
+                        id: "welcome-section"
+                    },
+                    React.createElement("div", {
+                        className: "forest"
+                    }),
+                    React.createElement("div", {
+                        className: "silhouette"
+                    }),
+                    React.createElement("div", {
+                        className: "moon"
+                    }),
+                    React.createElement("div", {
+                            className: "container"
+                        },
+                        React.createElement("h1", null,
+                            React.createElement("span", {
+                                className: "line"
+                            }, "I do"),
+                            React.createElement("span", {
+                                className: "line"
+                            }, "graphic design"),
+                            React.createElement("span", {
+                                    className: "line"
+                                },
+                                React.createElement("span", {
+                                    className: "color"
+                                }, "&"), " code.")),
+
+
+                        React.createElement("div", {
+                                className: "buttons"
+                            },
+                            React.createElement("a", {
+                                href: "#projects"
+                            }, "my portfolio"),
+                            React.createElement("a", {
+                                href: "#contact",
+                                className: "cta"
+                            }, "get in touch")))));
+
+
+
+
+
+
+        };
+
+
+        /***********************
+             About Component
+            ***********************/
+
+        const About = props => {
+            return (
+                React.createElement("section", {
+                        id: "about"
+                    },
+                    React.createElement("div", {
+                            className: "wrapper"
+                        },
+                        React.createElement("article", null,
+                            React.createElement("div", {
+                                    className: "title"
+                                },
+                                React.createElement("h3", null, "Who's this guy?"),
+                                React.createElement("p", {
+                                    className: "separator"
+                                })),
+
+                            React.createElement("div", {
+                                    className: "desc full"
+                                },
+                                React.createElement("h4", {
+                                    className: "subtitle"
+                                }, "My name is Yago."),
+                                React.createElement("p", null, "I am a web developer and UX designer based in the beautiful west coast of Spain, Galicia."),
+
+
+
+                                React.createElement("p", null, "I really enjoy solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better. I also love photography, a hobby I'm taking along since the good old film cameras. Oh, and rice with milk; I have a passion for rice with milk!")),
+
+
+
+
+
+
+                            React.createElement("div", {
+                                    className: "title"
+                                },
+                                React.createElement("h3", null, "What does he do?"),
+                                React.createElement("p", {
+                                    className: "separator"
+                                })),
+
+                            React.createElement("div", {
+                                    className: "desc"
+                                },
+                                React.createElement("h4", {
+                                    className: "subtitle"
+                                }, "I'm a programmer."),
+                                React.createElement("p", null, "For the front-end I usually work with Javascript, either standalone or including popular frameworks like ReactJS and VueJS. I also make the web pretty by using Sass, CSS and, whenever needed, any of their friends: Bootstrap, Bulma, etc."),
+
+
+
+
+                                React.createElement("p", null, "For the back-end I also work with Javascript (NodeJS, Express, MongoDB, etc). But, of course, whenever the project requires PHP, I do PHP as well (Wordpress, Laravel, etc).")),
+
+
+
+
+                            React.createElement("div", {
+                                    className: "desc"
+                                },
+                                React.createElement("h4", {
+                                    className: "subtitle"
+                                }, "Also a designer."),
+                                React.createElement("p", null, "I feel comfortable working with many Adobe products. Photoshop, Illustrator, InDesign, Lightroom or Xd are some kind of industry standards and I love working with them. I'm not limited to them, though: Gimp, Inkscape or Figma are also very valid applications that I've been working with."),
+
+
+
+
+
+                                React.createElement("p", null, "User interfaces, brochures, books, branding... You name it! As I mentioned, creating pretty things is particularly important for me."))))));
+
+
+
+
+
+
+
+
+        };
+
+
+        /***********************
+             Project Component
+            ***********************/
+
+        const Project = props => {
+            const tech = {
+                sass: 'fab fa-sass',
+                css: 'fab fa-css3-alt',
+                js: 'fab fa-js-square',
+                react: 'fab fa-react',
+                vue: 'fab fa-vuejs',
+                d3: 'far fa-chart-bar',
+                node: 'fab fa-node'
+            };
+
+
+            const link = props.link || 'http://';
+            const repo = props.repo || 'http://';
+
+            return (
+                React.createElement("div", {
+                        className: "project"
+                    },
+                    React.createElement("a", {
+                            className: "project-link",
+                            href: link,
+                            target: "_blank",
+                            rel: "noopener noreferrer"
+                        },
+                        React.createElement("img", {
+                            className: "project-image",
+                            src: props.img,
+                            alt: 'Screenshot of ' + props.title
+                        })),
+
+                    React.createElement("div", {
+                            className: "project-details"
+                        },
+                        React.createElement("div", {
+                                className: "project-tile"
+                            },
+                            React.createElement("p", {
+                                    className: "icons"
+                                },
+                                props.tech.split(' ').map((t) =>
+                                    React.createElement("i", {
+                                        className: tech[t],
+                                        key: t
+                                    }))),
+
+
+                            props.title, ' '),
+
+                        props.children,
+                        React.createElement("div", {
+                                className: "buttons"
+                            },
+                            React.createElement("a", {
+                                    href: repo,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer"
+                                }, "View source ",
+                                React.createElement("i", {
+                                    className: "fas fa-external-link-alt"
+                                })),
+
+                            React.createElement("a", {
+                                    href: link,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer"
+                                }, "Try it Live ",
+                                React.createElement("i", {
+                                    className: "fas fa-external-link-alt"
+                                }))))));
+
+
+
+
+
+        };
+
+
+
+        /***********************
+             Projects Component
+            ***********************/
+
+        const Projects = props => {
+            return (
+                React.createElement("section", {
+                        id: "projects"
+                    },
+                    React.createElement("div", {
+                            className: "projects-container"
+                        },
+                        React.createElement("div", {
+                                className: "heading"
+                            },
+                            React.createElement("h3", {
+                                className: "title"
+                            }, "My Works"),
+                            React.createElement("p", {
+                                className: "separator"
+                            }),
+                            React.createElement("p", {
+                                    className: "subtitle"
+                                }, "Here's a list of ",
+                                React.createElement("u", null, "most"), " of the projects I've been working on lately. All of these were built during my coding camp adventure on",
+                                ' ',
+                                React.createElement("a", {
+                                    href: "https://www.freecodecamp.org/",
+                                    target: "_blank",
+                                    rel: "noopener noreferrer"
+                                }, "freeCodeCamp"), ", where I've been coding for almost 7 months non-stop until I completed all the projects required to get my Full-Stack Developer certification.")),
+
+
+
+
+
+
+                        React.createElement("div", {
+                                className: "projects-wrapper"
+                            },
+                            React.createElement(Project, {
+                                    title: "Anonymous Message Board.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/AnonMsgBoard.jpg',
+                                    tech: "js css react node",
+                                    link: "https://yagoestevez-anon-msg-board.glitch.me/",
+                                    repo: "https://github.com/yagoestevez/anonymous-message-board"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, MongoDB, CSS + Bulma, React.js and React Router."),
+
+
+                                React.createElement("p", null, "This is a full-stack website that I made which lets the users read and post anonymous messages and replies.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Stock Price Checker.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/StockPriceChecker.jpg',
+                                    tech: "js node css",
+                                    link: "https://yagoestevez-stock-price-checker.glitch.me/",
+                                    repo: "https://github.com/yagoestevez/fcc-stock-price-checker"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, MongoDB, JS + jQuery + Axios, CSS + Bootstrap and Pug."),
+
+
+                                React.createElement("p", null, "Another full-stack website to check the current value of any requested stock in the market.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Personal Library.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/PersonalLibrary.jpg',
+                                    tech: "js node css",
+                                    link: "https://yagoestevez-personal-library.glitch.me/",
+                                    repo: "https://github.com/yagoestevez/fcc-personal-library"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, MongoDB, JS + jQuery, CSS + Bootstrap and Pug."),
+                                React.createElement("p", null, "A full-stack website to store book titles and comments to each book into a remote database.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Issue Tracker.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/IssueTracker.jpg',
+                                    tech: "js node css",
+                                    link: "https://yagoestevez-issue-tracker.glitch.me/",
+                                    repo: "https://github.com/yagoestevez/fcc-issue-tracker"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, MongoDB, JS + jQuery, CSS + Bootstrap and Pug."),
+                                React.createElement("p", null, "Yet another full-stack app to save and manage technical issues to be fixed.")),
+
+                            React.createElement(Project, {
+                                    title: "Metric-Imperial Converter.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/MetricImperialConverter.jpg',
+                                    tech: "js node css",
+                                    link: "https://yagoestevez-metric-imperial-converter.glitch.me/",
+                                    repo: "https://github.com/yagoestevez/fcc-metric-imperial-converter/"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, JS + jQuery, CSS + Bootstrap and Pug."),
+                                React.createElement("p", null, "Another full-stack for converting values from the Internation System of Units (Metric) into the imperial units.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "URL Shortener Microservice.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Cortala.jpg',
+                                    tech: "js node css",
+                                    link: "https://cortala.glitch.me/example",
+                                    repo: "https://github.com/yagoestevez/cortala"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, CSS + Bootstrap and Pug."),
+                                React.createElement("p", null, "A microservice which takes a raw URL and makes it a short link to make it easy to sent it through the Internet.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Exercise Tracker.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/ExerciseTracker.jpg',
+                                    tech: "js vue node css",
+                                    link: "https://yagoestevez-exercise-tracker.glitch.me",
+                                    repo: "https://github.com/yagoestevez/exercise-tracker"
+                                },
+
+                                React.createElement("small", null, "Built using Node, Express, VueJS + Vue Router and CSS + Bootstrap."),
+                                React.createElement("p", null, "A service which lets the users save their daily exercise (or anything) into a log for them to check it later.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Bar Chart.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/BarChart.jpg',
+                                    tech: "js d3 css",
+                                    link: "https://codepen.io/yagoestevez/full/wxjmrB/",
+                                    repo: "https://github.com/yagoestevez/fcc-barchart"
+                                },
+
+                                React.createElement("small", null, "Built using CSS, JS and D3.js."),
+                                React.createElement("p", null, "A bar chart representing the evolution of the US GDP.")),
+
+                            React.createElement(Project, {
+                                    title: "Treemap Diagram.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TreemapDiagram.jpg',
+                                    tech: "js d3 css",
+                                    link: "https://codepen.io/yagoestevez/full/bjZygz/",
+                                    repo: "https://github.com/yagoestevez/fcc-treemap-diagram"
+                                },
+
+                                React.createElement("small", null, "Built using CSS, JS and D3.js."),
+                                React.createElement("p", null, "A treemap diagram representing groups of pledges and sales from a particular category.")),
+
+
+
+                            React.createElement(Project, {
+                                    title: "Choropleth Map.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/ChoroplethMap.jpg',
+                                    tech: "js d3 css",
+                                    link: "https://codepen.io/yagoestevez/full/NBeaWK/",
+                                    repo: "https://github.com/yagoestevez/fcc-choropleth-map"
+                                },
+
+                                React.createElement("small", null, "Built using CSS, JS and D3.js."),
+                                React.createElement("p", null, "A choropleth map representing the educational attainment by county in the U.S.")),
+
+                            React.createElement(Project, {
+                                    title: "Random Quoting Machine.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/QuotingMachine.jpg',
+                                    tech: "js vue css",
+                                    link: "https://codepen.io/yagoestevez/full/bxgEyd/",
+                                    repo: "https://github.com/yagoestevez/random-quoting-machine"
+                                },
+
+                                React.createElement("small", null, "Built using VueJS, Axios and CSS + Bootstrap."),
+                                React.createElement("p", null, "A random quoting app which retrieves pictures and quotes from two different APIs.")),
+
+                            React.createElement(Project, {
+                                    title: "Calculator.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Calculator.jpg',
+                                    tech: "js react css",
+                                    link: "https://codepen.io/yagoestevez/full/ERVONM/",
+                                    repo: "https://github.com/yagoestevez/the-calcoolator"
+                                },
+
+                                React.createElement("small", null, "Built using React and CSS."),
+                                React.createElement("p", null, "A project on which I built a virtual calculator with its usual features.")),
+
+                            React.createElement(Project, {
+                                    title: "Pomodoro Timer.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TomateTimer.jpg',
+                                    tech: "js react css",
+                                    link: "https://codepen.io/yagoestevez/full/dqJGVa",
+                                    repo: "https://github.com/yagoestevez/tomate-time"
+                                },
+
+                                React.createElement("small", null, "Built using React, CSS and lots of SVG."),
+                                React.createElement("p", null, "A cute and animated Pomodoro clock to help the users improve their productivity.")),
+
+                            React.createElement(Project, {
+                                    title: "TicTacToe Game.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TicTacToe.jpg',
+                                    tech: "js react css",
+                                    link: "https://codepen.io/yagoestevez/full/KRevzB/",
+                                    repo: "https://github.com/yagoestevez/TicTacToe"
+                                },
+
+                                React.createElement("small", null, "Built using React, CSS and SVG."),
+                                React.createElement("p", null, "A TicTacToe game with a basic AI algorithm made for the legacy front-end projects on FreeCodeCamp.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Twitch Clone.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Twitch.jpg',
+                                    tech: "js vue sass",
+                                    link: "https://codepen.io/yagoestevez/full/xjwVPq/"
+                                },
+
+
+                                React.createElement("small", null, "Built using VueJS, Axios and Scss."),
+                                React.createElement("p", null, "Simple Twitch clone using the new Twitch Helix API and made for the legacy front-end projects on FreeCodeCamp.")),
+
+
+
+
+                            React.createElement(Project, {
+                                    title: "Weather App.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/WeatherApp.jpg',
+                                    tech: "js vue css",
+                                    link: "https://codepen.io/yagoestevez/full/zWbGmZ/"
+                                },
+
+
+                                React.createElement("small", null, "Built using VueJS, Axios and CSS."),
+                                React.createElement("p", null, "App that present the users with the current local weather for their location.")),
+
+                            React.createElement(Project, {
+                                    title: "Tribute.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Tribute.jpg',
+                                    tech: "js sass",
+                                    link: "https://codepen.io/yagoestevez/full/aaaOxL/",
+                                    repo: "https://github.com/yagoestevez/tribute-to-aaron-swartz"
+                                },
+
+                                React.createElement("small", null, "Built using vanilla Javascript and Scss."),
+                                React.createElement("p", null, "Tribute page to Aaron Swartz, a static website built with SCSS and plain Javascript.")),
+
+
+
+                            React.createElement(Project, {
+                                    title: "Survey Form.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/SurveyForm.jpg',
+                                    tech: "js sass",
+                                    link: "https://codepen.io/yagoestevez/full/bjVgjX/",
+                                    repo: "https://github.com/yagoestevez/membership-form"
+                                },
+
+                                React.createElement("small", null, "Built using vanilla Javascript and Scss."),
+                                React.createElement("p", null, "An animated survey form.")),
+
+                            React.createElement(Project, {
+                                    title: "Landing Page Example.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/LandingPage.jpg',
+                                    tech: "js sass",
+                                    link: "https://codepen.io/yagoestevez/full/pOBLeK/",
+                                    repo: "https://github.com/yagoestevez/tomate-timer-landing-page"
+                                },
+
+                                React.createElement("small", null, "Built using vanilla Javascript and Scss."),
+                                React.createElement("p", null, "A landing page for the Pomodoro Timer I made (shown previously in this section).")),
+
+                            React.createElement(Project, {
+                                    title: "Technical Documentation Page.",
+                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Documentify.jpg',
+                                    tech: "js react css",
+                                    link: "https://codepen.io/yagoestevez/full/QxOLKX/",
+                                    repo: "https://github.com/yagoestevez/documentify"
+                                },
+
+                                React.createElement("small", null, "Built using React and CSS."),
+                                React.createElement("p", null, "A technical documentation page made for a little React library I published on NPM."))))));
+
+
+
+
+
+
+
+        };
+
+
+
+        /***********************
+             Contact Component
+            ***********************/
+
+        const Contact = props => {
+            return (
+                React.createElement("section", {
+                        id: "contact"
+                    },
+                    React.createElement("div", {
+                            className: "container"
+                        },
+                        React.createElement("div", {
+                                className: "heading-wrapper"
+                            },
+                            React.createElement("div", {
+                                    className: "heading"
+                                },
+                                React.createElement("p", {
+                                        className: "title"
+                                    }, "Want to ",
+                                    React.createElement("br", null), "contact me?"),
+
+
+                                React.createElement("p", {
+                                    className: "separator"
+                                }),
+                                React.createElement("p", {
+                                        className: "subtitle"
+                                    }, "Please, use the form below or send an email to ",
+                                    '',
+                                    React.createElement("span", {
+                                            className: "mail"
+                                        }, "web",
+
+                                        React.createElement("i", {
+                                            className: "fas fa-at at"
+                                        }), "yagoestevez",
+
+                                        React.createElement("i", {
+                                            className: "fas fa-circle dot"
+                                        }), "com"), ":")),
+
+
+
+
+
+                            React.createElement(SocialLinks, null)),
+
+                        React.createElement("form", {
+                                id: "contact-form",
+                                action: "#"
+                            },
+                            React.createElement("input", {
+                                placeholder: "Name",
+                                name: "name",
+                                type: "text",
+                                required: true
+                            }),
+                            React.createElement("input", {
+                                placeholder: "Email",
+                                name: "email",
+                                type: "email",
+                                required: true
+                            }),
+                            React.createElement("textarea", {
+                                placeholder: "Message",
+                                type: "text",
+                                name: "message"
+                            }),
+                            React.createElement("input", {
+                                className: "button",
+                                id: "submit",
+                                value: "Submit",
+                                type: "submit"
+                            })))));
+
+
+
+
+        };
+
+
+
+        /***********************
+             Footer Component
+            ***********************/
+
+        const Footer = props => {
+            return (
+                React.createElement("footer", null,
+                    React.createElement("div", {
+                            className: "wrapper"
+                        },
+                        React.createElement("h3", null, "THANKS FOR VISITING"),
+                        React.createElement("p", null, "\xA9 ", new Date().getFullYear(), " Yago Est\xE9vez."),
+                        React.createElement(SocialLinks, null))));
+
+
+
+        };
+
+
+
+
+        /***********************
+             Social Links Component
+            ***********************/
+
+        const SocialLinks = props => {
+            return (
+                React.createElement("div", {
+                        className: "social"
+                    },
+                    React.createElement("a", {
+                            href: "https://twitter.com/yagoestevez",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            title: "Link to author's Twitter profile"
+                        },
+
+                        ' ',
+                        React.createElement("i", {
+                            className: "fab fa-twitter"
+                        })),
+
+                    React.createElement("a", {
+                            id: "profile-link",
+                            href: "https://github.com/yagoestevez",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            title: "Link to author's GitHub Profile"
+                        },
+
+                        ' ',
+                        React.createElement("i", {
+                            className: "fab fa-github"
+                        })),
+
+                    React.createElement("a", {
+                            href: "https://codepen.io/yagoestevez",
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            title: "Link to author's Codepen Profile"
+                        },
+
+                        ' ',
+                        React.createElement("i", {
+                            className: "fab fa-codepen"
+                        }))));
+
+
+
+        };
+
+
+
+        /***********************
+             Main Component
+            ***********************/
+
+        class App extends React.Component {
+            constructor(...args) {
+                super(...args);
+                _defineProperty(this, "state", {
+                    menuState: false
+                });
+                _defineProperty(this, "toggleMenu",
+
+
+                    () => {
+                        this.setState(state => ({
+                            menuState: !state.menuState ?
+                                'active' : state.menuState === 'deactive' ?
+                                'active' : 'deactive'
+                        }));
+
+                    });
+            }
+
+            render() {
+                return (
+                    React.createElement(React.Fragment, null,
+                        React.createElement(Menu, {
+                            toggleMenu: this.toggleMenu,
+                            showMenu: this.state.menuState
+                        }),
+                        React.createElement(Nav, {
+                            toggleMenu: this.toggleMenu,
+                            showMenu: this.state.menuState
+                        }),
+                        React.createElement(Header, null),
+                        React.createElement(About, null),
+                        React.createElement(Projects, null),
+                        React.createElement(Contact, null),
+                        React.createElement(Footer, null)));
+
+
+            }
+
+            componentDidMount() {
+                const navbar = document.querySelector('#navbar');
+                const header = document.querySelector('#welcome-section');
+                const forest = document.querySelector('.forest');
+                const silhouette = document.querySelector('.silhouette');
+                let forestInitPos = -300;
+
+                window.onscroll = () => {
+                    let scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+
+                    if (scrollPos <= window.innerHeight) {
+                        silhouette.style.bottom = `${parseInt(scrollPos / 6)}px`;
+                        forest.style.bottom = `${parseInt(forestInitPos + scrollPos / 6)}px`;
+                    }
+
+                    if (scrollPos - 100 <= window.innerHeight)
+                        header.style.visibility = header.style.visibility === 'hidden' && 'visible';
+                    else
+                        header.style.visibility = 'hidden';
+
+                    if (scrollPos + 100 >= window.innerHeight) navbar.classList.add('bg-active');
+                    else
+                        navbar.classList.remove('bg-active');
+                };
+
+                (function navSmoothScrolling() {
+                    const internalLinks = document.querySelectorAll('a[href^="#"]');
+                    for (let i in internalLinks) {
+                        if (internalLinks.hasOwnProperty(i)) {
+                            internalLinks[i].addEventListener('click', e => {
+                                e.preventDefault();
+                                document.querySelector(internalLinks[i].hash).scrollIntoView({
+                                    block: 'start',
+                                    behavior: 'smooth'
+                                });
+
+                            });
+                        }
+                    }
+                })();
+            }
+        }
+
+
+
+        ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
+        //# sourceURL=pen.js
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
