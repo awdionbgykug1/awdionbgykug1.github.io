@@ -12,6 +12,17 @@ footer {
 blockquote {
     padding: 1rem;
     border: 2px solid red;
+    font-size: 1.5rem;
+}
+
+footer {
+    padding-bottom: 3rem;
+}
+
+header {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 ::-webkit-scrollbar {
@@ -49,4 +60,5 @@ body {
     background-repeat: no-repeat, no-repeat;
     background-size: contain, contain;
     width: 12%;
+    min-height: 100px;
 }

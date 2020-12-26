@@ -79,7 +79,7 @@ body {
 }
 
 .main-heading a {
-    border: 2px solid #0321a7;
+    border: 3px solid #0321a7;
     border-radius: 40px;
     padding: 0px 0px 0px 5px;
     margin-left: -6px;
@@ -382,4 +382,42 @@ iframe {
 .freebirdFormviewerViewNavigationPasswordWarning,
 .freebirdFormviewerViewFooterEmbeddedBackground {
     display: none !important;
+}
+
+.qwe {
+    font-weight: 400;
+}
+
+.qwe:hover {
+    color: #171bd6;
+    transition: 1s;
+}
+
+.qwe::before {
+    transform: rotate(90deg) translate(30px, -27px);
+    font-size: 110px;
+    content: "»";
+    position: absolute;
+    animation-name: blink-hover;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.qwe:hover::before {
+    visibility: visible;
+    transition: 1s;
+}
+
+@keyframes blink-hover {
+    50% {
+        opacity: 0;
+    }
+}
+
+div.cont-blick {
+    display: inline;
+    transition: 1s;
 }
