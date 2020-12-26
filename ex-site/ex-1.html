@@ -1,13 +1,8 @@
 <html lang="en">
-<link type="text/css" id="dark-mode" rel="stylesheet" href="">
-<style type="text/css" id="dark-mode-custom-style"></style>
 
 <head>
 
     <meta charset="UTF-8">
-
-
-
     <title>FedorOFF</title>
     <meta content="#181d23" name="theme-color">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -307,11 +302,13 @@
         
         .social {
             padding: 1rem 0 0 .5rem;
+            justify-content: space-between;
+            display: flex;
         }
         
         .social a {
             font-size: 1.5rem;
-            padding: .2rem;
+            padding: .5rem;
         }
         
         .menu-container a,
@@ -954,7 +951,7 @@
             color: #252934;
             overflow: hidden;
             text-align: center;
-            border-radius: 50%;
+            border-radius: 40%;
             border: 1px solid #fafafa;
             box-shadow: 0 20px 10px -10px #25293450;
             -webkit-transition: 300ms;
@@ -1272,6 +1269,38 @@
                 padding-bottom: .8rem;
             }
         }
+        
+         ::-webkit-scrollbar {
+            width: 15px;
+            background: inherit;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-track,
+         ::-webkit-scrollbar-thumb {
+            background-color: inherit;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: rgb(0 0 0);
+            box-shadow: inset 0 0 0 1px #05173b;
+            border: 2px solid #ffffff;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #4b4a4d;
+        }
+        
+         ::-webkit-scrollbar:active {
+            background: inherit;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+        }
+        
+         ::-webkit-scrollbar-thumb:active {
+            background: #222122;
+        }
     </style>
 
 
@@ -1290,16 +1319,13 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
                 <div class="social">
-                    <a href="https://twitter.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"> <i class="fab fa-twitter"></i></a>
-                    <a id="profile-link" href="https://github.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"> <i class="fab fa-github"></i></a>
-                    <a href="https://codepen.io/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Codepen Profile"> <i class="fab fa-codepen"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"> <i class="fab fa-twitter"></i></a>
+                    <a id="profile-link" href="#" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"> <i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Link to author's Codepen Profile"> <i class="fab fa-codepen"></i></a>
                 </div>
             </div>
         </div>
-        <nav id="navbar" class="">
-            <div class="nav-wrapper">
-                <p class="brand">Fedor<strong style="font: red">OFF</strong></p><a class="menu-button"><span></span></a></div>
-        </nav>
+
         <header id="welcome-section" style="visibility: visible;">
             <div class="forest" style="bottom: -300px;"></div>
             <div class="silhouette" style="bottom: 0px;"></div>
@@ -1314,31 +1340,33 @@
             <div class="wrapper">
                 <article>
                     <div class="title">
-                        <h3>Who's this guy?</h3>
+                        <h3>Lorem</h3>
                         <p class="separator"></p>
                     </div>
                     <div class="desc full">
-                        <h4 class="subtitle">My name is Yago.</h4>
-                        <p>I am a web developer and UX designer based in the beautiful west coast of Spain, Galicia.</p>
-                        <p>I really enjoy solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better. I also love photography, a hobby I'm taking along since the good old film cameras. Oh, and
-                            rice with milk; I have a passion for rice with milk!</p>
+                        <h4 class="subtitle">Lorem ipsum</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, voluptas officia. Nulla blanditiis voluptas, soluta dolor tempora porro quidem ex recusandae laboriosam repellat incidunt sapiente, corporis ipsum placeat at necessitatibus
+                            laudantium ea delectus. Quisquam illum labore nostrum maiores earum. Et ex dignissimos sint error est vero distinctio perferendis. In, ab! Voluptas quibusdam illo voluptates magni aspernatur asperiores esse nesciunt dolor harum
+                            tenetur quos suscipit deserunt non dignissimos dolorem dolore aliquam animi, illum, similique ipsum accusantium repellendus enim cumque. Excepturi, tempora vel. Facilis explicabo ullam distinctio sunt asperiores. Illum repudiandae
+                            iste facilis quas, quibusdam dignissimos, tempore inventore, eum quis laudantium impedit?</p>
                     </div>
                     <div class="title">
-                        <h3>What does he do?</h3>
+                        <h3>lorem</h3>
                         <p class="separator"></p>
                     </div>
                     <div class="desc">
-                        <h4 class="subtitle">I'm a programmer.</h4>
-                        <p>For the front-end I usually work with Javascript, either standalone or including popular frameworks like ReactJS and VueJS. I also make the web pretty by using Sass, CSS and, whenever needed, any of their friends: Bootstrap, Bulma,
-                            etc.
-                        </p>
-                        <p>For the back-end I also work with Javascript (NodeJS, Express, MongoDB, etc). But, of course, whenever the project requires PHP, I do PHP as well (Wordpress, Laravel, etc).</p>
+                        <h4 class="subtitle">lorem</h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi repellat, atque corrupti quae explicabo sit, quo sapiente aspernatur vel odit aliquam incidunt numquam similique architecto, minima voluptate aperiam ab! Animi aut ullam sequi esse ipsam in
+                        at sint, tenetur provident eligendi, eveniet earum numquam beatae saepe enim voluptatibus inventore similique blanditiis nobis impedit autem possimus ad debitis! Harum alias dicta, tempora perspiciatis accusantium dolorem? Eveniet
+                        consectetur modi iusto eos neque, dolores explicabo architecto reprehenderit suscipit quis doloremque doloribus dolorem repellat iure ratione tempora molestias aliquam? Ab, eius consectetur sed explicabo deleniti iusto inventore
+                        laudantium incidunt enim pariatur earum, dignissimos labore?</p>
                     </div>
                     <div class="desc">
-                        <h4 class="subtitle">Also a designer.</h4>
-                        <p>I feel comfortable working with many Adobe products. Photoshop, Illustrator, InDesign, Lightroom or Xd are some kind of industry standards and I love working with them. I'm not limited to them, though: Gimp, Inkscape or Figma are
-                            also very valid applications that I've been working with.</p>
-                        <p>User interfaces, brochures, books, branding... You name it! As I mentioned, creating pretty things is particularly important for me.</p>
+                        <h4 class="subtitle">lorem</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, expedita quia veritatis amet accusantium, molestias incidunt laborum repellat cupiditate harum rem quis aperiam voluptatem odio vero non minus, illo ut. Quam accusamus,
+                            tenetur asperiores, deserunt eveniet nulla nihil tempore provident, dolorum magni numquam sit. Nostrum eos voluptatibus cupiditate neque beatae pariatur itaque ipsam a quae? Illo, voluptatem et. Deleniti optio magnam fugit
+                            impedit ipsam. Tempore minus delectus, quia vitae blanditiis accusantium rerum omnis, voluptatum sint dolorem ullam ipsa dignissimos accusamus veniam ab amet libero, illum velit. Sit, in perferendis? Aut sit laboriosam quis
+                            est totam magnam voluptate, saepe quia recusandae!</p>
                     </div>
                 </article>
             </div>
@@ -1346,11 +1374,14 @@
         <section id="projects">
             <div class="projects-container">
                 <div class="heading">
-                    <h3 class="title">My Works</h3>
+                    <h3 class="title">lorem</h3>
                     <p class="separator"></p>
-                    <p class="subtitle">Here's a list of <u>most</u> of the projects I've been working on lately. All of these were built during my coding camp adventure on <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>,
-                        where I've been coding for almost 7 months non-stop until I completed all the projects required to get my Full-Stack Developer certification.</p>
+                    <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi laborum laudantium nostrum distinctio explicabo error ratione adipisci. Ab amet, tempora, vitae ea, sequi soluta ducimus accusamus rerum quo ratione quos voluptatem
+                        blanditiis recusandae? Hic eos minima reiciendis fugit, perferendis, magni incidunt corporis odit alias consectetur expedita dolorum. Doloribus aliquid repellendus corporis itaque facilis ex, deserunt delectus! Reprehenderit nihil
+                        saepe vel nostrum. Labore possimus pariatur tenetur magni! Odio unde nulla, consectetur nesciunt iusto, ut animi voluptate facilis pariatur deserunt fugiat inventore, non minima praesentium eveniet quisquam repudiandae dolore.
+                        Sint aliquam, numquam accusamus dolore ratione vel dicta totam porro cumque. Nam, accusamus?</p>
                 </div>
+
                 <div class="projects-wrapper">
                     <div class="project">
                         <a class="project-link" href="https://yagoestevez-anon-msg-board.glitch.me/" target="_blank" rel="noopener noreferrer"><img class="project-image" src="https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/AnonMsgBoard.jpg" alt="Screenshot of Anonymous Message Board."></a>
@@ -1569,7 +1600,7 @@
         <footer>
             <div class="wrapper">
                 <h3>THANKS FOR VISITING</h3>
-                <p>© 2020 Yago Estévez.</p>
+                <p>© 2020</p>
                 <div class="social">
                     <a href="https://twitter.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's Twitter profile"> <i class="fab fa-twitter"></i></a>
                     <a id="profile-link" href="https://github.com/yagoestevez" target="_blank" rel="noopener noreferrer" title="Link to author's GitHub Profile"> <i class="fab fa-github"></i></a>
@@ -1595,7 +1626,7 @@
                 obj[key] = value;
             }
             return obj;
-        } // Made by Yago Estévez (Twitter: @yagoestevez.com)
+        }
 
 
         /***********************
@@ -1669,9 +1700,9 @@
                             },
                             React.createElement("p", {
                                     className: "brand"
-                                }, "yago",
+                                }, "Fedor",
 
-                                React.createElement("strong", null, "est\xE9vez")),
+                                React.createElement("strong", null, "OFF")),
 
                             React.createElement("a", {
                                     onClick: props.toggleMenu,
@@ -1759,7 +1790,7 @@
                             React.createElement("div", {
                                     className: "title"
                                 },
-                                React.createElement("h3", null, "Who's this guy?"),
+                                React.createElement("h3", null, "lorem"),
                                 React.createElement("p", {
                                     className: "separator"
                                 })),
@@ -1769,12 +1800,12 @@
                                 },
                                 React.createElement("h4", {
                                     className: "subtitle"
-                                }, "My name is Yago."),
-                                React.createElement("p", null, "I am a web developer and UX designer based in the beautiful west coast of Spain, Galicia."),
+                                }, "lorem"),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!"),
 
 
 
-                                React.createElement("p", null, "I really enjoy solving problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better. I also love photography, a hobby I'm taking along since the good old film cameras. Oh, and rice with milk; I have a passion for rice with milk!")),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
 
@@ -1784,7 +1815,7 @@
                             React.createElement("div", {
                                     className: "title"
                                 },
-                                React.createElement("h3", null, "What does he do?"),
+                                React.createElement("h3", null, "Lorem"),
                                 React.createElement("p", {
                                     className: "separator"
                                 })),
@@ -1794,13 +1825,13 @@
                                 },
                                 React.createElement("h4", {
                                     className: "subtitle"
-                                }, "I'm a programmer."),
-                                React.createElement("p", null, "For the front-end I usually work with Javascript, either standalone or including popular frameworks like ReactJS and VueJS. I also make the web pretty by using Sass, CSS and, whenever needed, any of their friends: Bootstrap, Bulma, etc."),
+                                }, "Lorem"),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!"),
 
 
 
 
-                                React.createElement("p", null, "For the back-end I also work with Javascript (NodeJS, Express, MongoDB, etc). But, of course, whenever the project requires PHP, I do PHP as well (Wordpress, Laravel, etc).")),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
 
@@ -1810,14 +1841,14 @@
                                 },
                                 React.createElement("h4", {
                                     className: "subtitle"
-                                }, "Also a designer."),
-                                React.createElement("p", null, "I feel comfortable working with many Adobe products. Photoshop, Illustrator, InDesign, Lightroom or Xd are some kind of industry standards and I love working with them. I'm not limited to them, though: Gimp, Inkscape or Figma are also very valid applications that I've been working with."),
+                                }, "Lorem"),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!"),
 
 
 
 
 
-                                React.createElement("p", null, "User interfaces, brochures, books, branding... You name it! As I mentioned, creating pretty things is particularly important for me."))))));
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!"))))));
 
 
 
@@ -1929,20 +1960,13 @@
                             },
                             React.createElement("h3", {
                                 className: "title"
-                            }, "My Works"),
+                            }, "Lorem"),
                             React.createElement("p", {
                                 className: "separator"
                             }),
                             React.createElement("p", {
-                                    className: "subtitle"
-                                }, "Here's a list of ",
-                                React.createElement("u", null, "most"), " of the projects I've been working on lately. All of these were built during my coding camp adventure on",
-                                ' ',
-                                React.createElement("a", {
-                                    href: "https://www.freecodecamp.org/",
-                                    target: "_blank",
-                                    rel: "noopener noreferrer"
-                                }, "freeCodeCamp"), ", where I've been coding for almost 7 months non-stop until I completed all the projects required to get my Full-Stack Developer certification.")),
+                                className: "subtitle"
+                            }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
 
@@ -1953,24 +1977,24 @@
                                 className: "projects-wrapper"
                             },
                             React.createElement(Project, {
-                                    title: "Anonymous Message Board.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/AnonMsgBoard.jpg',
+                                    title: "Lorem",
+                                    img: '../F-img/ex-2.png',
                                     tech: "js css react node",
-                                    link: "https://yagoestevez-anon-msg-board.glitch.me/",
+                                    link: "../ex-site/ex-2.html",
                                     repo: "https://github.com/yagoestevez/anonymous-message-board"
                                 },
 
                                 React.createElement("small", null, "Built using Node, Express, MongoDB, CSS + Bulma, React.js and React Router."),
 
 
-                                React.createElement("p", null, "This is a full-stack website that I made which lets the users read and post anonymous messages and replies.")),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
 
 
                             React.createElement(Project, {
                                     title: "Stock Price Checker.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/StockPriceChecker.jpg',
+                                    img: '../F-img/ex-3.png',
                                     tech: "js node css",
                                     link: "https://yagoestevez-stock-price-checker.glitch.me/",
                                     repo: "https://github.com/yagoestevez/fcc-stock-price-checker"
@@ -1979,230 +2003,48 @@
                                 React.createElement("small", null, "Built using Node, Express, MongoDB, JS + jQuery + Axios, CSS + Bootstrap and Pug."),
 
 
-                                React.createElement("p", null, "Another full-stack website to check the current value of any requested stock in the market.")),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
 
 
                             React.createElement(Project, {
                                     title: "Personal Library.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/PersonalLibrary.jpg',
+                                    img: '../F-img/ex-4.png',
                                     tech: "js node css",
                                     link: "https://yagoestevez-personal-library.glitch.me/",
                                     repo: "https://github.com/yagoestevez/fcc-personal-library"
                                 },
 
                                 React.createElement("small", null, "Built using Node, Express, MongoDB, JS + jQuery, CSS + Bootstrap and Pug."),
-                                React.createElement("p", null, "A full-stack website to store book titles and comments to each book into a remote database.")),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
 
 
                             React.createElement(Project, {
                                     title: "Issue Tracker.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/IssueTracker.jpg',
+                                    img: '../F-img/ex-5.png',
                                     tech: "js node css",
                                     link: "https://yagoestevez-issue-tracker.glitch.me/",
                                     repo: "https://github.com/yagoestevez/fcc-issue-tracker"
                                 },
 
                                 React.createElement("small", null, "Built using Node, Express, MongoDB, JS + jQuery, CSS + Bootstrap and Pug."),
-                                React.createElement("p", null, "Yet another full-stack app to save and manage technical issues to be fixed.")),
-
-                            React.createElement(Project, {
-                                    title: "Metric-Imperial Converter.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/MetricImperialConverter.jpg',
-                                    tech: "js node css",
-                                    link: "https://yagoestevez-metric-imperial-converter.glitch.me/",
-                                    repo: "https://github.com/yagoestevez/fcc-metric-imperial-converter/"
-                                },
-
-                                React.createElement("small", null, "Built using Node, Express, JS + jQuery, CSS + Bootstrap and Pug."),
-                                React.createElement("p", null, "Another full-stack for converting values from the Internation System of Units (Metric) into the imperial units.")),
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!")),
 
 
-
-
-                            React.createElement(Project, {
-                                    title: "URL Shortener Microservice.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Cortala.jpg',
-                                    tech: "js node css",
-                                    link: "https://cortala.glitch.me/example",
-                                    repo: "https://github.com/yagoestevez/cortala"
-                                },
-
-                                React.createElement("small", null, "Built using Node, Express, CSS + Bootstrap and Pug."),
-                                React.createElement("p", null, "A microservice which takes a raw URL and makes it a short link to make it easy to sent it through the Internet.")),
-
-
-
-
-                            React.createElement(Project, {
-                                    title: "Exercise Tracker.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/ExerciseTracker.jpg',
-                                    tech: "js vue node css",
-                                    link: "https://yagoestevez-exercise-tracker.glitch.me",
-                                    repo: "https://github.com/yagoestevez/exercise-tracker"
-                                },
-
-                                React.createElement("small", null, "Built using Node, Express, VueJS + Vue Router and CSS + Bootstrap."),
-                                React.createElement("p", null, "A service which lets the users save their daily exercise (or anything) into a log for them to check it later.")),
-
-
-
-
-                            React.createElement(Project, {
-                                    title: "Bar Chart.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/BarChart.jpg',
-                                    tech: "js d3 css",
-                                    link: "https://codepen.io/yagoestevez/full/wxjmrB/",
-                                    repo: "https://github.com/yagoestevez/fcc-barchart"
-                                },
-
-                                React.createElement("small", null, "Built using CSS, JS and D3.js."),
-                                React.createElement("p", null, "A bar chart representing the evolution of the US GDP.")),
-
-                            React.createElement(Project, {
-                                    title: "Treemap Diagram.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TreemapDiagram.jpg',
-                                    tech: "js d3 css",
-                                    link: "https://codepen.io/yagoestevez/full/bjZygz/",
-                                    repo: "https://github.com/yagoestevez/fcc-treemap-diagram"
-                                },
-
-                                React.createElement("small", null, "Built using CSS, JS and D3.js."),
-                                React.createElement("p", null, "A treemap diagram representing groups of pledges and sales from a particular category.")),
-
-
-
-                            React.createElement(Project, {
-                                    title: "Choropleth Map.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/ChoroplethMap.jpg',
-                                    tech: "js d3 css",
-                                    link: "https://codepen.io/yagoestevez/full/NBeaWK/",
-                                    repo: "https://github.com/yagoestevez/fcc-choropleth-map"
-                                },
-
-                                React.createElement("small", null, "Built using CSS, JS and D3.js."),
-                                React.createElement("p", null, "A choropleth map representing the educational attainment by county in the U.S.")),
-
-                            React.createElement(Project, {
-                                    title: "Random Quoting Machine.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/QuotingMachine.jpg',
-                                    tech: "js vue css",
-                                    link: "https://codepen.io/yagoestevez/full/bxgEyd/",
-                                    repo: "https://github.com/yagoestevez/random-quoting-machine"
-                                },
-
-                                React.createElement("small", null, "Built using VueJS, Axios and CSS + Bootstrap."),
-                                React.createElement("p", null, "A random quoting app which retrieves pictures and quotes from two different APIs.")),
-
-                            React.createElement(Project, {
-                                    title: "Calculator.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Calculator.jpg',
-                                    tech: "js react css",
-                                    link: "https://codepen.io/yagoestevez/full/ERVONM/",
-                                    repo: "https://github.com/yagoestevez/the-calcoolator"
-                                },
-
-                                React.createElement("small", null, "Built using React and CSS."),
-                                React.createElement("p", null, "A project on which I built a virtual calculator with its usual features.")),
-
-                            React.createElement(Project, {
-                                    title: "Pomodoro Timer.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TomateTimer.jpg',
-                                    tech: "js react css",
-                                    link: "https://codepen.io/yagoestevez/full/dqJGVa",
-                                    repo: "https://github.com/yagoestevez/tomate-time"
-                                },
-
-                                React.createElement("small", null, "Built using React, CSS and lots of SVG."),
-                                React.createElement("p", null, "A cute and animated Pomodoro clock to help the users improve their productivity.")),
-
-                            React.createElement(Project, {
-                                    title: "TicTacToe Game.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/TicTacToe.jpg',
-                                    tech: "js react css",
-                                    link: "https://codepen.io/yagoestevez/full/KRevzB/",
-                                    repo: "https://github.com/yagoestevez/TicTacToe"
-                                },
-
-                                React.createElement("small", null, "Built using React, CSS and SVG."),
-                                React.createElement("p", null, "A TicTacToe game with a basic AI algorithm made for the legacy front-end projects on FreeCodeCamp.")),
-
-
-
-
-                            React.createElement(Project, {
-                                    title: "Twitch Clone.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Twitch.jpg',
-                                    tech: "js vue sass",
-                                    link: "https://codepen.io/yagoestevez/full/xjwVPq/"
-                                },
-
-
-                                React.createElement("small", null, "Built using VueJS, Axios and Scss."),
-                                React.createElement("p", null, "Simple Twitch clone using the new Twitch Helix API and made for the legacy front-end projects on FreeCodeCamp.")),
-
-
-
-
-                            React.createElement(Project, {
-                                    title: "Weather App.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/WeatherApp.jpg',
-                                    tech: "js vue css",
-                                    link: "https://codepen.io/yagoestevez/full/zWbGmZ/"
-                                },
-
-
-                                React.createElement("small", null, "Built using VueJS, Axios and CSS."),
-                                React.createElement("p", null, "App that present the users with the current local weather for their location.")),
-
-                            React.createElement(Project, {
-                                    title: "Tribute.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Tribute.jpg',
-                                    tech: "js sass",
-                                    link: "https://codepen.io/yagoestevez/full/aaaOxL/",
-                                    repo: "https://github.com/yagoestevez/tribute-to-aaron-swartz"
-                                },
-
-                                React.createElement("small", null, "Built using vanilla Javascript and Scss."),
-                                React.createElement("p", null, "Tribute page to Aaron Swartz, a static website built with SCSS and plain Javascript.")),
-
-
-
-                            React.createElement(Project, {
-                                    title: "Survey Form.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/SurveyForm.jpg',
-                                    tech: "js sass",
-                                    link: "https://codepen.io/yagoestevez/full/bjVgjX/",
-                                    repo: "https://github.com/yagoestevez/membership-form"
-                                },
-
-                                React.createElement("small", null, "Built using vanilla Javascript and Scss."),
-                                React.createElement("p", null, "An animated survey form.")),
-
-                            React.createElement(Project, {
-                                    title: "Landing Page Example.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/LandingPage.jpg',
-                                    tech: "js sass",
-                                    link: "https://codepen.io/yagoestevez/full/pOBLeK/",
-                                    repo: "https://github.com/yagoestevez/tomate-timer-landing-page"
-                                },
-
-                                React.createElement("small", null, "Built using vanilla Javascript and Scss."),
-                                React.createElement("p", null, "A landing page for the Pomodoro Timer I made (shown previously in this section).")),
 
                             React.createElement(Project, {
                                     title: "Technical Documentation Page.",
-                                    img: 'https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Components/Projects/Images/Documentify.jpg',
+                                    img: '../F-img/ex-6.png',
                                     tech: "js react css",
                                     link: "https://codepen.io/yagoestevez/full/QxOLKX/",
                                     repo: "https://github.com/yagoestevez/documentify"
                                 },
 
                                 React.createElement("small", null, "Built using React and CSS."),
-                                React.createElement("p", null, "A technical documentation page made for a little React library I published on NPM."))))));
+                                React.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae iure accusantium saepe necessitatibus accusamus quisquam pariatur iusto laudantium consequatur ipsa!"))))));
 
 
 

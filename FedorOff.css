@@ -1,13 +1,4 @@
-/* canvas#oldSkool {
-    display: inline-block;
-    position: fixed;
-    z-index: -1;
-    margin-left: -10vw;
-    width: 120%;
-} */
-
 ::-webkit-scrollbar {
-    /* background: linear-gradient(218deg, rgba(255, 255, 255, 1) 0%, rgba(241, 255, 125, 1) 15%, rgba(87, 255, 95, 1) 35%, rgba(196, 65, 169, 1) 54%, rgba(142, 62, 62, 1) 69%, rgba(14, 4, 87, 1) 88%, rgba(0, 0, 0, 0.6867121848739496) 100%); */
     width: 15px;
     background: inherit;
     border-radius: 10px;
