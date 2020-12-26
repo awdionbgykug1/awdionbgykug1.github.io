@@ -417,7 +417,8 @@ iframe {
     }
 }
 
-div.cont-blick {
+.cont-blick {
     display: inline;
     transition: 1s;
+    margin-left: -20px;
 }

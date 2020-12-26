@@ -63,11 +63,11 @@
 
         <section id="home" class="sec-main">
             <h1 class="main-heading">Fedor
-                <div class="cont-blick">
+                <span class="cont-blick">
                     <a href="#about" class="qwe">
                 Off</a>
-                </div>
-                Studio</h1>
+                </span> Studio
+            </h1>
         </section>
 
         <section id="about" class="sec-about">
@@ -241,7 +241,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script id="rendered-js">
         $(function() {
-            $('.js-nav a, .js-connect').click(function(e) {
+            $('.js-nav a, h1 a, .js-connect').click(function(e) {
                 e.preventDefault();
                 $('body, html').animate({
                         scrollTop: $($.attr(this, 'href')).offset().top
